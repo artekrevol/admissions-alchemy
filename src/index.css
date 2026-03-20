@@ -144,3 +144,13 @@
     color: hsl(var(--primary));
   }
 }
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Bottom padding for sticky CTA */
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
