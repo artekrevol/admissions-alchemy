@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import RevenueLeakage from "./pages/RevenueLeakage.tsx";
 import PatientGrowthEngine from "./pages/PatientGrowthEngine.tsx";
 import NoShows from "./pages/NoShows.tsx";
+import DormantLeads from "./pages/DormantLeads.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
