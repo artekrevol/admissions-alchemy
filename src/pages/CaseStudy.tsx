@@ -5,6 +5,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Zap, RefreshCw, Target, CalendarX, DatabaseZap, ShieldCheck } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const situationBullets = [
   "180 inquiries per month",
