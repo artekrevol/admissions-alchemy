@@ -11,10 +11,24 @@ import { Footer } from "@/components/homepage/Footer";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
+import { SEOHead } from "@/components/SEOHead";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="PatientFlow — Turn Inquiries Into Admissions"
+        description="We install and operate a patient conversion system that helps healthcare clinics increase admissions, reduce no-shows, and recover lost revenue."
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "PatientFlow",
+          url: "https://patientflow.com",
+          description: "We install and operate a patient conversion system that helps healthcare clinics increase admissions, reduce no-shows, and recover lost revenue.",
+          serviceType: "Healthcare Revenue System",
+        }}
+      />
       <Navbar />
       <HeroSection />
       <ProblemSection />

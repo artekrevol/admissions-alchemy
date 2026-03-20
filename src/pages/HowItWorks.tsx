@@ -5,6 +5,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Headphones, BarChart3, Users, Clock, PhoneCall, Bot, Eye, ShieldCheck, TrendingUp, LineChart } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const step1Bullets = [
   "Listen to recorded calls",
@@ -76,6 +77,11 @@ const weHandle = [
 const HowItWorks = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="How It Works — Diagnose, Deploy, Optimize"
+        description="We install and run your conversion system in 3 steps: diagnose where revenue leaks, deploy the system, and optimize performance weekly."
+        path="/how-it-works"
+      />
       <Navbar />
 
       {/* HERO */}

@@ -5,6 +5,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, UserX, Megaphone, ShieldAlert, PauseCircle, Clock, HeartPulse, History, CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const whyBlocks = [
   { icon: Users, title: "Your team is buried", content: "New inquiries take priority. Old leads never get touched." },
@@ -39,8 +40,12 @@ const outcomesBullets = [
 const DormantLeads = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Dormant Lead Reactivation — Recover Lost Revenue"
+        description="Most clinics have 500-5,000 dormant contacts worth up to $972K. Learn how to systematically reactivate them into revenue."
+        path="/dormant-leads"
+      />
       <Navbar />
-
       {/* HERO */}
       <section className="section-padding pt-32 md:pt-40 pb-20 md:pb-28 lg:pb-36 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/[0.03] blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" />

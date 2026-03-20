@@ -5,6 +5,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Zap, RefreshCw, Target, CalendarX, DatabaseZap, ShieldCheck } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const situationBullets = [
   "180 inquiries per month",
@@ -51,6 +52,18 @@ const resultsBullets = [
 const CaseStudy = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Case Study — $840K Recovered by Fixing Intake"
+        description="How a 3-location addiction treatment provider recovered $840K in annual revenue by fixing their intake system — not their marketing."
+        path="/case-study"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "$840K Recovered by Fixing Intake — Not Marketing",
+          description: "Case study: Regional addiction treatment provider recovers $840K by systematizing intake.",
+          publisher: { "@type": "Organization", name: "PatientFlow" },
+        }}
+      />
       <Navbar />
 
       {/* HERO */}
