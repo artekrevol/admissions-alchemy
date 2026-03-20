@@ -5,6 +5,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, UserX, Megaphone, ShieldAlert, PauseCircle, Clock, HeartPulse, History, CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const whyBlocks = [
   { icon: Users, title: "Your team is buried", content: "New inquiries take priority. Old leads never get touched." },
