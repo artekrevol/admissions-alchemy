@@ -20,13 +20,13 @@ export function StickyCtaBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)]"
+          className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-t border-border shadow-[0_-4px_24px_rgba(0,0,0,0.1)]"
         >
           <div className="container-wide section-padding flex items-center justify-between py-3 md:py-4">
             <p className="hidden sm:block text-sm font-medium text-foreground">
               Stop losing patients between inquiry and intake.
             </p>
-            <Button variant="hero" size="lg" className="w-full sm:w-auto">
+            <Button variant="hero" size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200">
               Identify Where You're Losing Revenue
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>

@@ -1,5 +1,8 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { Search, Wrench, BarChart3 } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -22,6 +25,22 @@ const steps = [
   },
 ];
 
+function TimelineConnector({ delay }: { delay: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+
+  return (
+    <div ref={ref} className="hidden md:flex justify-center py-2">
+      <motion.div
+        className="w-px bg-primary/20"
+        initial={{ height: 0 }}
+        animate={inView ? { height: 48 } : {}}
+        transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
+      />
+    </div>
+  );
+}
+
 export function ProcessSection() {
   return (
     <section className="section-padding section-y" style={{ backgroundColor: "hsl(var(--surface-cool))" }}>
@@ -37,17 +56,20 @@ export function ProcessSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, i) => (
-            <ScrollReveal key={step.number} delay={0.1 * i}>
-              <div className="relative">
-                <span className="text-7xl font-serif text-primary/[0.08] absolute -top-4 -left-2 select-none">
-                  {step.number}
-                </span>
-                <div className="relative pt-8">
-                  <step.icon className="w-8 h-8 text-primary mb-4 stroke-[1.5]" />
-                  <h3 className="font-sans font-semibold text-xl text-foreground mb-3">{step.title}</h3>
+            <ScrollReveal key={step.number} delay={0.12 * i}>
+              <Link to="/how-it-works" className="block group">
+                <div className="relative bg-background rounded-xl p-8 border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  {/* Step number badge */}
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                    <step.icon className="w-6 h-6 text-primary stroke-[1.5]" />
+                  </div>
+                  <span className="absolute top-6 right-6 text-5xl font-serif text-primary/[0.06] select-none">
+                    {step.number}
+                  </span>
+                  <h3 className="font-sans font-semibold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
                 </div>
-              </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

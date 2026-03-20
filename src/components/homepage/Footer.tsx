@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { ScrollReveal } from "./ScrollReveal";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container-wide">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div className="md:col-span-1">
-            <p className="font-serif text-xl text-display mb-3">PatientFlow</p>
+            <Link to="/" className="font-serif text-xl text-display mb-3 block hover:opacity-80 transition-opacity">PatientFlow</Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               The revenue system for healthcare operators.
             </p>
@@ -16,19 +16,19 @@ export function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-4">Solutions</p>
             <div className="space-y-2.5">
-              <a href="/revenue-leakage" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Revenue Leakage</a>
-              <a href="/patient-growth-engine" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Growth Engine</a>
-              <a href="/no-shows" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">No-Show Prevention</a>
-              <a href="/dormant-leads" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Dormant Leads</a>
+              <Link to="/revenue-leakage" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Revenue Leakage</Link>
+              <Link to="/patient-growth-engine" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Growth Engine</Link>
+              <Link to="/no-shows" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">No-Show Prevention</Link>
+              <Link to="/dormant-leads" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Dormant Leads</Link>
             </div>
           </div>
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-4">Company</p>
             <div className="space-y-2.5">
-              <a href="/how-it-works" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">How It Works</a>
-              <a href="/case-study" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Case Study</a>
-              <a href="/sprint" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">3-Week Sprint</a>
+              <Link to="/how-it-works" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">How It Works</Link>
+              <Link to="/case-study" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Case Study</Link>
+              <Link to="/sprint" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">3-Week Sprint</Link>
             </div>
           </div>
 

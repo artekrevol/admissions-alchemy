@@ -143,6 +143,12 @@
     @apply text-5xl md:text-6xl lg:text-7xl leading-none tabular-nums;
     color: hsl(var(--primary));
   }
+
+  /* Section gradient dividers */
+  .section-divider {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.15), transparent);
+  }
 }
 
 /* Smooth scroll */
@@ -153,4 +159,10 @@ html {
 /* Bottom padding for sticky CTA */
 body {
   padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Selection color */
+::selection {
+  background: hsl(var(--primary) / 0.15);
+  color: hsl(var(--text-display));
 }

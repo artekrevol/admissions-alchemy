@@ -1,6 +1,7 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface MidPageCtaProps {
   text: string;
@@ -16,19 +17,19 @@ export function MidPageCta({ text, linkText = "Identify Where You're Losing Reve
           <p className="text-muted-foreground text-base mb-6 mx-auto" style={{ maxWidth: "none" }}>
             {text}
           </p>
-          <Button variant="hero" size="lg" asChild={!!href}>
-            {href ? (
-              <a href={href}>
+          {href ? (
+            <Link to={href}>
+              <Button variant="hero" size="lg" className="shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200">
                 {linkText}
                 <ArrowRight className="w-4 h-4 ml-1" />
-              </a>
-            ) : (
-              <>
-                {linkText}
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </>
-            )}
-          </Button>
+              </Button>
+            </Link>
+          ) : (
+            <Button variant="hero" size="lg" className="shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200">
+              {linkText}
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
+          )}
         </ScrollReveal>
       </div>
     </section>

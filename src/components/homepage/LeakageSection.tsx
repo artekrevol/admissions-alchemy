@@ -1,4 +1,6 @@
 import { ScrollReveal } from "./ScrollReveal";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const stages = [
   {
@@ -33,6 +35,35 @@ const stages = [
   },
 ];
 
+function FunnelBar({ pct, lost, delay }: { pct: number; lost: number; delay: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+
+  return (
+    <div ref={ref} className="relative h-12 rounded-lg bg-muted overflow-hidden">
+      <motion.div
+        className="absolute inset-y-0 left-0 bg-primary rounded-lg flex items-center justify-end pr-3"
+        initial={{ width: 0 }}
+        animate={inView ? { width: `${pct}%` } : {}}
+        transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+        style={{ opacity: 0.2 + (pct / 100) * 0.8 }}
+      >
+        <span className="text-sm font-bold text-primary-foreground tabular-nums">{pct}%</span>
+      </motion.div>
+      {lost > 0 && (
+        <motion.div
+          className="absolute inset-y-0 right-0 bg-accent/10 rounded-r-lg flex items-center justify-center"
+          initial={{ width: 0, opacity: 0 }}
+          animate={inView ? { width: `${lost}%`, opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: delay + 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span className="text-xs font-bold text-accent tabular-nums">−{lost}%</span>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
 export function LeakageSection() {
   return (
     <section className="section-padding section-y">
@@ -51,22 +82,12 @@ export function LeakageSection() {
 
         <div className="space-y-8">
           {stages.map((stage, i) => (
-            <ScrollReveal key={stage.stage} delay={0.08 * i}>
+            <ScrollReveal key={stage.stage} delay={0.06}>
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 items-start">
                 {/* Funnel bar */}
                 <div>
-                  <p className="text-sm font-semibold text-foreground mb-2">{stage.stage}</p>
-                  <div className="relative h-10 rounded-lg bg-muted overflow-hidden">
-                    <div
-                      className="absolute inset-y-0 left-0 bg-primary rounded-lg flex items-center justify-end pr-3 transition-all duration-700"
-                      style={{ width: `${stage.pct}%`, opacity: 0.15 + (stage.pct / 100) * 0.85 }}
-                    >
-                      <span className="text-xs font-bold text-primary-foreground">{stage.pct}%</span>
-                    </div>
-                  </div>
-                  {stage.lost > 0 && (
-                    <p className="text-xs text-highlight font-medium mt-1">−{stage.lost}% lost at this stage</p>
-                  )}
+                  <p className="text-sm font-semibold text-foreground mb-3">{stage.stage}</p>
+                  <FunnelBar pct={stage.pct} lost={stage.lost} delay={0.1 * i} />
                 </div>
                 {/* Description */}
                 <p className="text-sm text-muted-foreground leading-relaxed">{stage.body}</p>

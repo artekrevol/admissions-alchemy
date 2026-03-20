@@ -19,10 +19,10 @@ export function ObjectionsSection() {
           <h2 className="max-w-2xl mb-12">What this doesn't require</h2>
         </ScrollReveal>
 
-        <div className="space-y-5 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
           {objections.map((item, i) => (
             <ScrollReveal key={item} delay={0.08 * i}>
-              <div className="flex items-start gap-4 p-5 rounded-lg bg-background border border-border shadow-sm">
+              <div className="flex items-start gap-4 p-5 rounded-xl bg-background border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <X className="w-4 h-4 text-primary" />
                 </div>
