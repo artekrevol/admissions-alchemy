@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/homepage/Navbar";
 import { Footer } from "@/components/homepage/Footer";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Headphones, BarChart3, Users, Clock, PhoneCall, Bot, Eye, ShieldCheck, TrendingUp, LineChart } from "lucide-react";
 
@@ -358,7 +360,25 @@ const HowItWorks = () => {
         </div>
       </section>
 
+      {/* INTERNAL LINKS */}
+      <section className="section-padding py-12 md:py-16" style={{ backgroundColor: "hsl(var(--surface-warm))" }}>
+        <div className="container-narrow">
+          <ScrollReveal>
+            <p className="label-text mb-6">See It In Action</p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ScrollReveal delay={0.06}>
+              <PageLink href="/case-study" label="Case Study: $840K Recovered" description="Real results from a 3-location treatment provider." />
+            </ScrollReveal>
+            <ScrollReveal delay={0.12}>
+              <PageLink href="/sprint" label="3-Week Sprint" description="Get a working revenue system installed fast." />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       <Footer />
+      <StickyCtaBar />
     </div>
   );
 };

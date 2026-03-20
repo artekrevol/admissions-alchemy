@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/homepage/Navbar";
 import { Footer } from "@/components/homepage/Footer";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Zap, RefreshCw, Target, CalendarX, DatabaseZap, ShieldCheck } from "lucide-react";
 
@@ -256,6 +258,15 @@ const CaseStudy = () => {
         </div>
       </section>
 
+      {/* INTERNAL LINK */}
+      <section className="section-padding py-12 md:py-16">
+        <div className="container-narrow">
+          <ScrollReveal>
+            <PageLink href="/sprint" label="Start the 3-Week Sprint" description="Get a working revenue system installed — not a report, not a roadmap." />
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">
@@ -279,6 +290,7 @@ const CaseStudy = () => {
       </section>
 
       <Footer />
+      <StickyCtaBar />
     </div>
   );
 };

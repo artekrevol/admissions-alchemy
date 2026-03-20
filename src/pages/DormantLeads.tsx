@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/homepage/Navbar";
 import { Footer } from "@/components/homepage/Footer";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, UserX, Megaphone, ShieldAlert, PauseCircle, Clock, HeartPulse, History, CheckCircle2 } from "lucide-react";
 
@@ -71,23 +73,37 @@ const DormantLeads = () => {
         </div>
       </section>
 
-      {/* MATH */}
+      {/* MATH - visual stat cards */}
       <section className="section-padding section-y-tight bg-primary text-primary-foreground">
         <div className="container-narrow">
           <ScrollReveal>
             <h2 className="text-primary-foreground mb-10">The Math Is Simple</h2>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <div className="max-w-lg space-y-1 mb-10">
-              <p className="text-primary-foreground/80 text-lg">1,200 dormant contacts:</p>
-              <p className="text-primary-foreground/70 text-lg">15% reachable = 180</p>
-              <p className="text-primary-foreground/70 text-lg">30% convert = 54 patients</p>
-              <p className="text-primary-foreground/70 text-lg">$18K average value</p>
-              <p className="text-primary-foreground font-semibold text-xl mt-4">$972,000 in recoverable revenue.</p>
-              <p className="text-primary-foreground/70 text-lg mt-2">Even at half: $486K.</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+              <div className="bg-primary-foreground/[0.08] backdrop-blur-sm rounded-xl p-5 border border-primary-foreground/10 text-center">
+                <p className="text-2xl md:text-3xl font-serif text-primary-foreground mb-1">1,200</p>
+                <p className="text-xs text-primary-foreground/60">dormant contacts</p>
+              </div>
+              <div className="bg-primary-foreground/[0.08] backdrop-blur-sm rounded-xl p-5 border border-primary-foreground/10 text-center">
+                <p className="text-2xl md:text-3xl font-serif text-primary-foreground mb-1">180</p>
+                <p className="text-xs text-primary-foreground/60">15% reachable</p>
+              </div>
+              <div className="bg-primary-foreground/[0.08] backdrop-blur-sm rounded-xl p-5 border border-primary-foreground/10 text-center">
+                <p className="text-2xl md:text-3xl font-serif text-primary-foreground mb-1">54</p>
+                <p className="text-xs text-primary-foreground/60">30% convert</p>
+              </div>
+              <div className="bg-primary-foreground/[0.08] backdrop-blur-sm rounded-xl p-5 border border-primary-foreground/10 text-center">
+                <p className="text-2xl md:text-3xl font-serif text-primary-foreground mb-1">$18K</p>
+                <p className="text-xs text-primary-foreground/60">average value</p>
+              </div>
             </div>
           </ScrollReveal>
-          <ScrollReveal delay={0.16}>
+          <ScrollReveal delay={0.14}>
+            <p className="text-primary-foreground font-semibold text-xl mb-2">$972,000 in recoverable revenue.</p>
+            <p className="text-primary-foreground/70 text-lg mb-6">Even at half: $486K.</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
             <div className="border-t border-primary-foreground/20 pt-6">
               <p className="text-primary-foreground/70 text-lg mb-1">This isn't new lead gen.</p>
               <p className="text-primary-foreground/80 text-lg font-medium">This is revenue you already paid to acquire.</p>
@@ -239,6 +255,23 @@ const DormantLeads = () => {
         </div>
       </section>
 
+      {/* INTERNAL LINKS */}
+      <section className="section-padding py-12 md:py-16" style={{ backgroundColor: "hsl(var(--surface-warm))" }}>
+        <div className="container-narrow">
+          <ScrollReveal>
+            <p className="label-text mb-6">Related</p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ScrollReveal delay={0.06}>
+              <PageLink href="/case-study" label="Case Study: 83 Leads Reactivated" description="19 admitted within 60 days from dormant database." />
+            </ScrollReveal>
+            <ScrollReveal delay={0.12}>
+              <PageLink href="/sprint" label="3-Week Sprint" description="Get a working revenue system installed in 3 weeks." />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">
@@ -268,6 +301,7 @@ const DormantLeads = () => {
       </section>
 
       <Footer />
+      <StickyCtaBar />
     </div>
   );
 };

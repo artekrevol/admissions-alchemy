@@ -53,6 +53,28 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 40 25% 97%;
+    --card: 220 18% 12%;
+    --card-foreground: 40 25% 97%;
+    --primary: 192 55% 36%;
+    --primary-foreground: 40 25% 97%;
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 40 25% 97%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 10% 56%;
+    --accent: 16 78% 52%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --surface-warm: 220 16% 11%;
+    --surface-cool: 220 18% 9%;
+    --highlight: 16 78% 52%;
+    --text-display: 40 25% 95%;
+  }
 }
 
 @layer base {
@@ -121,4 +143,14 @@
     @apply text-5xl md:text-6xl lg:text-7xl leading-none tabular-nums;
     color: hsl(var(--primary));
   }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Bottom padding for sticky CTA */
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
