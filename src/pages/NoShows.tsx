@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/homepage/Navbar";
 import { Footer } from "@/components/homepage/Footer";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, VolumeX, Repeat, ShieldOff, Brain, Timer, Unlink, AlertTriangle, XCircle, CheckCircle2 } from "lucide-react";
 
@@ -192,6 +194,23 @@ const NoShows = () => {
         </div>
       </section>
 
+      {/* INTERNAL LINKS */}
+      <section className="section-padding py-12 md:py-16">
+        <div className="container-narrow">
+          <ScrollReveal>
+            <p className="label-text mb-6">Related</p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ScrollReveal delay={0.06}>
+              <PageLink href="/dormant-leads" label="Dormant Lead Reactivation" description="Recover revenue sitting untouched in your database." />
+            </ScrollReveal>
+            <ScrollReveal delay={0.12}>
+              <PageLink href="/case-study" label="Case Study: $840K Recovered" description="No-show rate dropped from 41% to 18%." />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">
@@ -221,6 +240,7 @@ const NoShows = () => {
       </section>
 
       <Footer />
+      <StickyCtaBar />
     </div>
   );
 };
