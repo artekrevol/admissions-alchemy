@@ -3,6 +3,7 @@ import { ScrollReveal } from "./ScrollReveal";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { HeroVisual } from "./HeroVisual";
 
 export function HeroSection() {
   return (
@@ -19,39 +20,51 @@ export function HeroSection() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
-      <div className="container-narrow relative">
-        <ScrollReveal>
-          <p className="label-text mb-6">For Healthcare Operators</p>
-        </ScrollReveal>
+      <div className="container-wide relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: copy */}
+          <div>
+            <ScrollReveal>
+              <p className="label-text mb-6">For Healthcare Operators</p>
+            </ScrollReveal>
 
-        <ScrollReveal delay={0.08}>
-          <h1 className="max-w-3xl mb-8" style={{ textWrap: "balance" as any }}>
-            Stop losing patients between inquiry and intake.
-          </h1>
-        </ScrollReveal>
+            <ScrollReveal delay={0.08}>
+              <h1 className="max-w-xl mb-8" style={{ textWrap: "balance" as any }}>
+                Stop losing patients between inquiry and intake.
+              </h1>
+            </ScrollReveal>
 
-        <ScrollReveal delay={0.16}>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-4 leading-relaxed">
-            You're generating demand—but your current system lets too many patients slip through before they ever reach care.
-          </p>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-            We install and run a patient conversion system that captures, follows up, and converts every inquiry—without adding headcount.
-          </p>
-        </ScrollReveal>
+            <ScrollReveal delay={0.16}>
+              <p className="text-muted-foreground text-lg md:text-xl max-w-lg mb-4 leading-relaxed">
+                You're generating demand—but your current system lets too many patients slip through before they ever reach care.
+              </p>
+              <p className="text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
+                We install and run a patient conversion system that captures, follows up, and converts every inquiry—without adding headcount.
+              </p>
+            </ScrollReveal>
 
-        <ScrollReveal delay={0.24}>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" size="xl">
-              Identify Where You're Losing Revenue
-              <ArrowRight className="w-5 h-5 ml-1" />
-            </Button>
-            <Link to="/how-it-works">
-              <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
-                See How It Works
-              </Button>
-            </Link>
+            <ScrollReveal delay={0.24}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button variant="hero" size="xl">
+                  Identify Where You're Losing Revenue
+                  <ArrowRight className="w-5 h-5 ml-1" />
+                </Button>
+                <Link to="/how-it-works">
+                  <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
+                    See How It Works
+                  </Button>
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
-        </ScrollReveal>
+
+          {/* Right: system visual */}
+          <ScrollReveal delay={0.3}>
+            <div className="hidden lg:block">
+              <HeroVisual />
+            </div>
+          </ScrollReveal>
+        </div>
 
         {/* Social proof bar */}
         <ScrollReveal delay={0.36}>
