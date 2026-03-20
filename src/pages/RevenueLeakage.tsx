@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, UserX, CalendarX, DatabaseZap, EyeOff } from "lucide-react";
 import { CheckCircle2 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import { OpportunityCalculator } from "@/components/calculator/OpportunityCalculator";
 
 const leaks = [
   {
