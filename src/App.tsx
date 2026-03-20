@@ -25,6 +25,7 @@ const App = () => (
           <Route path="/patient-growth-engine" element={<PatientGrowthEngine />} />
           <Route path="/no-shows" element={<NoShows />} />
           <Route path="/dormant-leads" element={<DormantLeads />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
