@@ -5,6 +5,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Headphones, BarChart3, Users, Clock, PhoneCall, Bot, Eye, ShieldCheck, TrendingUp, LineChart } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const step1Bullets = [
   "Listen to recorded calls",
