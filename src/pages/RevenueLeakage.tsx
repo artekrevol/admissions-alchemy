@@ -251,6 +251,8 @@ const RevenueLeakage = () => {
         </div>
       </section>
 
+      <OpportunityCalculator />
+
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">

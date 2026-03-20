@@ -217,6 +217,8 @@ const NoShows = () => {
         </div>
       </section>
 
+      <OpportunityCalculator highlightCard="noshow" initialInputs={{ scheduled: 30, noShowRate: 20 }} />
+
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">

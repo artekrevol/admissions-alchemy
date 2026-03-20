@@ -33,6 +33,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <ProblemSection />
+      <MiniCalculator />
       <LeakageSection />
 
       {/* Internal links after leakage */}

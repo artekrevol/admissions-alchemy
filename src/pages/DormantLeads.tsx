@@ -278,6 +278,8 @@ const DormantLeads = () => {
         </div>
       </section>
 
+      <OpportunityCalculator highlightCard="dormant" initialInputs={{ dormantLeads: 1200 }} />
+
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">
