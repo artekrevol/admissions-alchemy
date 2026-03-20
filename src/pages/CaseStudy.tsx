@@ -258,6 +258,15 @@ const CaseStudy = () => {
         </div>
       </section>
 
+      {/* INTERNAL LINK */}
+      <section className="section-padding py-12 md:py-16">
+        <div className="container-narrow">
+          <ScrollReveal>
+            <PageLink href="/sprint" label="Start the 3-Week Sprint" description="Get a working revenue system installed — not a report, not a roadmap." />
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">
@@ -281,6 +290,7 @@ const CaseStudy = () => {
       </section>
 
       <Footer />
+      <StickyCtaBar />
     </div>
   );
 };

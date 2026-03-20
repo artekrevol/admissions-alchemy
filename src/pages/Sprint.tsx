@@ -368,6 +368,7 @@ const Sprint = () => {
       </section>
 
       <Footer />
+      <StickyCtaBar />
     </div>
   );
 };
