@@ -4,6 +4,7 @@ import { ScrollReveal } from "@/components/homepage/ScrollReveal";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, XCircle, Zap, Settings, Rocket } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const valueBullets = [
   "Lead qualification and routing (live)",
