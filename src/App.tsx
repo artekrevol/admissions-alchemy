@@ -10,6 +10,7 @@ import NoShows from "./pages/NoShows.tsx";
 import DormantLeads from "./pages/DormantLeads.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
+import Sprint from "./pages/Sprint.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/dormant-leads" element={<DormantLeads />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/case-study" element={<CaseStudy />} />
+          <Route path="/sprint" element={<Sprint />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
