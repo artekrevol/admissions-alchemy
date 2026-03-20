@@ -76,6 +76,11 @@ const afterBullets = [
 const Sprint = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="3-Week Sprint — Build a Working Revenue System"
+        description="Get a live intake-to-admission system installed in 3 weeks. Connected to your data, integrated with your stack, converting leads from day one."
+        path="/sprint"
+      />
       <Navbar />
 
       {/* HERO */}

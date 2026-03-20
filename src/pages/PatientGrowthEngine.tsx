@@ -35,8 +35,12 @@ const outcomes = [
 const PatientGrowthEngine = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Patient Growth Engine — Convert Every Inquiry"
+        description="The Patient Growth Engine captures, contacts, and converts every inquiry into booked appointments — without adding headcount."
+        path="/patient-growth-engine"
+      />
       <Navbar />
-
       {/* HERO */}
       <section className="section-padding pt-32 md:pt-40 pb-20 md:pb-28 lg:pb-36 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/[0.03] blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" />

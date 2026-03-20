@@ -7,6 +7,7 @@ import { StatCard } from "@/components/homepage/StatCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, UserX, CalendarX, DatabaseZap, EyeOff } from "lucide-react";
 import { CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const leaks = [
   {
@@ -82,6 +83,11 @@ const systemBullets = [
 const RevenueLeakage = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Revenue Leakage — Where Patients Drop Off"
+        description="Discover the 5 stages where healthcare clinics lose patients between inquiry and admission, and how a systematic approach recovers lost revenue."
+        path="/revenue-leakage"
+      />
       <Navbar />
 
       {/* HERO */}

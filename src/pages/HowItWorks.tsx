@@ -77,6 +77,11 @@ const weHandle = [
 const HowItWorks = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="How It Works — Diagnose, Deploy, Optimize"
+        description="We install and run your conversion system in 3 steps: diagnose where revenue leaks, deploy the system, and optimize performance weekly."
+        path="/how-it-works"
+      />
       <Navbar />
 
       {/* HERO */}
