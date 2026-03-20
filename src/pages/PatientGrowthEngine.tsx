@@ -5,6 +5,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PhoneOff, Clock, Shuffle, DatabaseZap, EyeOff, CheckCircle2, Zap, MessageSquare, RotateCcw, BarChart3, Users } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const breakdowns = [
   { icon: PhoneOff, title: "Capture fails", content: "After-hours calls, weekends, busy periods—if no one answers, the lead is gone." },
