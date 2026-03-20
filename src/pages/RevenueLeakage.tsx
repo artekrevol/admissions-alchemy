@@ -1,6 +1,9 @@
 import { Navbar } from "@/components/homepage/Navbar";
 import { Footer } from "@/components/homepage/Footer";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { PageLink } from "@/components/homepage/PageLink";
+import { StatCard } from "@/components/homepage/StatCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, UserX, CalendarX, DatabaseZap, EyeOff } from "lucide-react";
 import { CheckCircle2 } from "lucide-react";
@@ -110,6 +113,18 @@ const RevenueLeakage = () => {
         </div>
       </section>
 
+      {/* KEY STATS */}
+      <section className="section-padding py-12 md:py-16">
+        <div className="container-narrow">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StatCard value="$48K" label="Lost monthly from slow response" delay={0} />
+            <StatCard value="$288K" label="Lost monthly from intake friction" delay={0.06} />
+            <StatCard value="$72K" label="Lost monthly from no-shows" delay={0.12} />
+            <StatCard value="$960K" label="Sitting unused in your database" delay={0.18} />
+          </div>
+        </div>
+      </section>
+
       {/* LEAKS INTRO */}
       <section className="section-padding section-y-tight" style={{ backgroundColor: "hsl(var(--surface-warm))" }}>
         <div className="container-narrow">
@@ -212,6 +227,23 @@ const RevenueLeakage = () => {
         </div>
       </section>
 
+      {/* INTERNAL LINKS */}
+      <section className="section-padding py-12 md:py-16">
+        <div className="container-narrow">
+          <ScrollReveal>
+            <p className="label-text mb-6">Explore Further</p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ScrollReveal delay={0.06}>
+              <PageLink href="/patient-growth-engine" label="Patient Growth Engine" description="See how the system captures and converts every inquiry." />
+            </ScrollReveal>
+            <ScrollReveal delay={0.12}>
+              <PageLink href="/case-study" label="Case Study: $840K Recovered" description="Real results from fixing intake — not marketing." />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
         <div className="container-narrow text-center">
@@ -241,6 +273,7 @@ const RevenueLeakage = () => {
       </section>
 
       <Footer />
+      <StickyCtaBar />
     </div>
   );
 };
