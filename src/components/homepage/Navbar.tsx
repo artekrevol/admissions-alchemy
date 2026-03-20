@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navPages = [
-  { label: "Revenue Leakage", href: "/revenue-leakage" },
-  { label: "Growth Engine", href: "/patient-growth-engine" },
-  { label: "No-Shows", href: "/no-shows" },
-  { label: "Dormant Leads", href: "/dormant-leads" },
+  { label: "Revenue Leakage", href: "/revenue-leakage", desc: "Where patients drop off" },
+  { label: "Growth Engine", href: "/patient-growth-engine", desc: "Capture and convert every inquiry" },
+  { label: "No-Shows", href: "/no-shows", desc: "Fill every chair" },
+  { label: "Dormant Leads", href: "/dormant-leads", desc: "Recover lost revenue" },
 ];
 
 const secondaryPages = [
@@ -18,70 +20,139 @@ const secondaryPages = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => { setOpen(false); }, [location.pathname]);
+
+  const isActive = (href: string) => location.pathname === href;
+  const isSolutionActive = navPages.some(p => isActive(p.href));
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? "bg-background/95 backdrop-blur-lg border-b border-border/60 shadow-sm"
+        : "bg-background/80 backdrop-blur-md border-b border-border/30"
+    }`}>
       <div className="container-wide section-padding flex items-center justify-between h-16 md:h-20">
-        <a href="/" className="font-serif text-xl md:text-2xl text-display tracking-tight">
+        <Link to="/" className="font-serif text-xl md:text-2xl text-display tracking-tight hover:opacity-80 transition-opacity">
           PatientFlow
-        </a>
+        </Link>
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-1">
           {/* Solutions dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-colors ${
+              isSolutionActive || dropdownOpen
+                ? "text-foreground font-medium"
+                : "text-muted-foreground hover:text-foreground"
+            }`}>
               Solutions
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
             </button>
-            {dropdownOpen && (
-              <div className="absolute top-full left-0 pt-2 w-56">
-                <div className="bg-background rounded-xl border border-border shadow-lg py-2">
-                  {navPages.map((page) => (
-                    <a
-                      key={page.href}
-                      href={page.href}
-                      className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                    >
-                      {page.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                  transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute top-full left-0 pt-2 w-72"
+                >
+                  <div className="bg-background rounded-xl border border-border shadow-xl p-2">
+                    {navPages.map((page) => (
+                      <Link
+                        key={page.href}
+                        to={page.href}
+                        className={`block px-4 py-3 rounded-lg text-sm transition-colors ${
+                          isActive(page.href)
+                            ? "bg-primary/[0.06] text-foreground font-medium"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                        }`}
+                      >
+                        <span className="font-medium text-foreground block">{page.label}</span>
+                        <span className="text-xs text-muted-foreground">{page.desc}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
-          <a href="/how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
-          <a href="/case-study" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Case Study</a>
-          <a href="/sprint" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Sprint</a>
-          <Button variant="hero" size="lg">Book a Diagnostic Call</Button>
+          {secondaryPages.map((page) => (
+            <Link
+              key={page.href}
+              to={page.href}
+              className={`px-3 py-2 rounded-lg text-sm transition-colors ${
+                isActive(page.href)
+                  ? "text-foreground font-medium bg-primary/[0.05]"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+              }`}
+            >
+              {page.label}
+            </Link>
+          ))}
+          <div className="ml-3">
+            <Button variant="hero" size="lg">Book a Diagnostic Call</Button>
+          </div>
         </div>
 
-        <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button className="lg:hidden p-2 -mr-2 rounded-lg hover:bg-muted/50 transition-colors" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {open && (
-        <div className="lg:hidden bg-background border-b border-border section-padding py-6 flex flex-col gap-3 max-h-[80vh] overflow-y-auto">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-1">Solutions</p>
-          {navPages.map((page) => (
-            <a key={page.href} href={page.href} className="text-sm text-foreground py-1.5" onClick={() => setOpen(false)}>
-              {page.label}
-            </a>
-          ))}
-          <div className="border-t border-border my-2" />
-          {secondaryPages.map((page) => (
-            <a key={page.href} href={page.href} className="text-sm text-foreground py-1.5" onClick={() => setOpen(false)}>
-              {page.label}
-            </a>
-          ))}
-          <Button variant="hero" size="lg" className="w-full mt-3">Book a Diagnostic Call</Button>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden overflow-hidden bg-background border-b border-border"
+          >
+            <div className="section-padding py-6 flex flex-col gap-1 max-h-[80vh] overflow-y-auto">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2 px-3">Solutions</p>
+              {navPages.map((page) => (
+                <Link
+                  key={page.href}
+                  to={page.href}
+                  className={`px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                    isActive(page.href) ? "text-foreground font-medium bg-primary/[0.06]" : "text-foreground/80"
+                  }`}
+                >
+                  {page.label}
+                </Link>
+              ))}
+              <div className="border-t border-border my-3" />
+              {secondaryPages.map((page) => (
+                <Link
+                  key={page.href}
+                  to={page.href}
+                  className={`px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                    isActive(page.href) ? "text-foreground font-medium bg-primary/[0.06]" : "text-foreground/80"
+                  }`}
+                >
+                  {page.label}
+                </Link>
+              ))}
+              <Button variant="hero" size="lg" className="w-full mt-4">Book a Diagnostic Call</Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
