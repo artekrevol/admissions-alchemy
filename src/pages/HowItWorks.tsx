@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/homepage/Navbar";
 import { Footer } from "@/components/homepage/Footer";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Headphones, BarChart3, Users, Clock, PhoneCall, Bot, Eye, ShieldCheck, TrendingUp, LineChart } from "lucide-react";
 
