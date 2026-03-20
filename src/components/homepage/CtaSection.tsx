@@ -8,25 +8,19 @@ export function CtaSection() {
       <div className="container-narrow text-center">
         <ScrollReveal>
           <h2 className="text-primary-foreground mx-auto max-w-2xl mb-6" style={{ textWrap: "balance" as any }}>
-            Stop losing patients to a broken process.
+            See exactly where your clinic is losing revenue—and what to fix first.
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.08}>
           <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto mb-10">
-            Book a free diagnostic call. We'll map your patient journey, identify 
-            the leaks, and show you exactly how the system would work in your clinic.
+            We'll map your intake process, identify where patients are dropping off, and show you what a system-driven workflow would look like.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.16}>
           <Button variant="hero" size="xl" className="bg-accent-foreground text-primary hover:bg-accent-foreground/90">
-            Book Your Free Diagnostic Call
+            Book Your Revenue System Diagnostic
             <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
-        </ScrollReveal>
-        <ScrollReveal delay={0.22}>
-          <p className="text-primary-foreground/50 text-sm mt-6">
-            No contracts. No software demos. Just a clear diagnosis.
-          </p>
         </ScrollReveal>
       </div>
     </section>

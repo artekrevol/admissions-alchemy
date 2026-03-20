@@ -6,19 +6,19 @@ const steps = [
     icon: Search,
     number: "01",
     title: "Diagnose",
-    desc: "We audit your current patient journey — from first inquiry to admission — and identify exactly where and why revenue is leaking.",
+    desc: "We map your intake process and identify exactly where patients are dropping off.",
   },
   {
     icon: Wrench,
     number: "02",
-    title: "Install",
-    desc: "We build and deploy a custom patient conversion system tailored to your clinic's workflow, team, and patient population.",
+    title: "Deploy",
+    desc: "We install and integrate the system into your existing workflow—no disruption.",
   },
   {
     icon: BarChart3,
     number: "03",
-    title: "Operate & Optimize",
-    desc: "We run the system alongside your team, continuously improving conversion rates and surfacing new opportunities.",
+    title: "Optimize",
+    desc: "We continuously improve performance so conversion increases over time.",
   },
 ];
 

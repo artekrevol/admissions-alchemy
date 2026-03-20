@@ -1,11 +1,11 @@
 import { Navbar } from "@/components/homepage/Navbar";
 import { HeroSection } from "@/components/homepage/HeroSection";
-import { PainSection } from "@/components/homepage/PainSection";
+import { ProblemSection } from "@/components/homepage/ProblemSection";
 import { LeakageSection } from "@/components/homepage/LeakageSection";
-import { ReframeSection } from "@/components/homepage/ReframeSection";
-import { SolutionSection } from "@/components/homepage/SolutionSection";
-import { ProcessSection } from "@/components/homepage/ProcessSection";
+import { SystemSection } from "@/components/homepage/SystemSection";
 import { ResultsSection } from "@/components/homepage/ResultsSection";
+import { ProcessSection } from "@/components/homepage/ProcessSection";
+import { ObjectionsSection } from "@/components/homepage/ObjectionsSection";
 import { CtaSection } from "@/components/homepage/CtaSection";
 import { Footer } from "@/components/homepage/Footer";
 
@@ -14,12 +14,12 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <PainSection />
+      <ProblemSection />
       <LeakageSection />
-      <ReframeSection />
-      <SolutionSection />
-      <ProcessSection />
+      <SystemSection />
       <ResultsSection />
+      <ProcessSection />
+      <ObjectionsSection />
       <CtaSection />
       <Footer />
     </div>
