@@ -10,6 +10,7 @@ import NoShows from "./pages/NoShows.tsx";
 import DormantLeads from "./pages/DormantLeads.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
+import Sprint from "./pages/Sprint.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
