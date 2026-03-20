@@ -6,12 +6,15 @@ import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Zap, RefreshCw, Target, CalendarX, DatabaseZap, ShieldCheck } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import { AnimatedCounter } from "@/components/homepage/AnimatedCounter";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const situationBullets = [
-  "180 inquiries per month",
-  "22% conversion to admissions",
-  "41% no-show rate",
-  "2,400 dormant leads in CRM",
+  { value: "180", label: "inquiries/month" },
+  { value: "22%", label: "conversion rate" },
+  { value: "41%", label: "no-show rate" },
+  { value: "2,400", label: "dormant leads" },
 ];
 
 const problemBullets = [
@@ -37,6 +40,13 @@ const fixBlocks = [
   { icon: ShieldCheck, title: "Insurance verification moved upstream", content: "Handled before assessment, not after." },
 ];
 
+const resultsBefore = [
+  { label: "Conversion", before: "22%", after: "34%" },
+  { label: "No-show rate", before: "41%", after: "18%" },
+  { label: "Time to admit", before: "11 days", after: "6 days" },
+  { label: "Dormant reactivated", before: "0", after: "83" },
+];
+
 const resultsBullets = [
   "Conversion increased from 22% to 34%",
   "22 additional admissions per month",
@@ -50,6 +60,9 @@ const resultsBullets = [
 ];
 
 const CaseStudy = () => {
+  const compareRef = useRef<HTMLDivElement>(null);
+  const compareInView = useInView(compareRef, { once: true, amount: 0.3 });
+
   return (
     <div className="min-h-screen">
       <SEOHead
@@ -68,7 +81,11 @@ const CaseStudy = () => {
 
       {/* HERO */}
       <section className="section-padding pt-32 md:pt-40 pb-20 md:pb-28 lg:pb-36 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/[0.03] blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+        <motion.div
+          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/[0.04] blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
         <div className="container-narrow relative">
           <ScrollReveal>
             <p className="label-text mb-6">Case Study</p>
@@ -103,9 +120,10 @@ const CaseStudy = () => {
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {situationBullets.map((item, i) => (
-              <ScrollReveal key={item} delay={0.06 * i}>
-                <div className="bg-background rounded-xl p-5 border border-border shadow-sm text-center">
-                  <span className="text-foreground font-semibold text-sm">{item}</span>
+              <ScrollReveal key={item.label} delay={0.06 * i}>
+                <div className="bg-background rounded-xl p-5 border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-center">
+                  <p className="font-serif text-2xl md:text-3xl text-primary leading-none mb-2">{item.value}</p>
+                  <p className="text-xs text-muted-foreground">{item.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -129,7 +147,7 @@ const CaseStudy = () => {
           <div className="space-y-3 mb-10">
             {problemBullets.map((item, i) => (
               <ScrollReveal key={item} delay={0.06 * i}>
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-background border border-border shadow-sm">
+                <div className="flex items-start gap-4 p-4 rounded-lg bg-background border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                   <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                   <span className="text-foreground font-medium text-base">{item}</span>
                 </div>
@@ -183,8 +201,13 @@ const CaseStudy = () => {
       </section>
 
       {/* FIX */}
-      <section className="section-padding section-y bg-primary text-primary-foreground">
-        <div className="container-narrow">
+      <section className="section-padding section-y bg-primary text-primary-foreground relative overflow-hidden">
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-[800px] h-[800px] rounded-full bg-primary-foreground/[0.02] blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="container-narrow relative">
           <ScrollReveal>
             <h2 className="text-primary-foreground mb-6">The Fix</h2>
           </ScrollReveal>
@@ -196,7 +219,7 @@ const CaseStudy = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {fixBlocks.map((block, i) => (
               <ScrollReveal key={block.title} delay={0.06 * i}>
-                <div className="bg-primary-foreground/[0.08] backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10 h-full">
+                <div className="bg-primary-foreground/[0.08] backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10 h-full hover:bg-primary-foreground/[0.12] transition-colors duration-300">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center shrink-0">
                       <block.icon className="w-5 h-5 text-primary-foreground stroke-[1.5]" />
@@ -232,7 +255,7 @@ const CaseStudy = () => {
         </div>
       </section>
 
-      {/* RESULTS */}
+      {/* BEFORE/AFTER VISUAL COMPARISON */}
       <section className="section-padding section-y" style={{ backgroundColor: "hsl(var(--surface-warm))" }}>
         <div className="container-narrow">
           <ScrollReveal>
@@ -241,10 +264,44 @@ const CaseStudy = () => {
           <ScrollReveal delay={0.06}>
             <h2 className="max-w-2xl mb-12">The Results</h2>
           </ScrollReveal>
+
+          {/* Visual before/after comparison table */}
+          <div ref={compareRef} className="rounded-xl overflow-hidden border border-border shadow-sm mb-10">
+            <div className="grid grid-cols-3">
+              <div className="p-4 bg-muted/50 border-b border-border" />
+              <div className="p-4 bg-accent/[0.06] border-b border-border text-center">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent">Before</p>
+              </div>
+              <div className="p-4 bg-primary/[0.06] border-b border-border text-center">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary">After</p>
+              </div>
+            </div>
+            {resultsBefore.map((row, i) => (
+              <motion.div
+                key={row.label}
+                initial={{ opacity: 0, x: -10 }}
+                animate={compareInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.1 * i, ease: [0.16, 1, 0.3, 1] }}
+                className="grid grid-cols-3 border-b border-border last:border-b-0"
+              >
+                <div className="p-4 bg-background flex items-center">
+                  <span className="text-sm font-medium text-foreground">{row.label}</span>
+                </div>
+                <div className="p-4 bg-accent/[0.03] flex items-center justify-center">
+                  <span className="text-sm text-foreground/50 line-through">{row.before}</span>
+                </div>
+                <div className="p-4 bg-primary/[0.03] flex items-center justify-center">
+                  <span className="text-sm font-bold text-primary">{row.after}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Full results list */}
           <div className="space-y-3">
             {resultsBullets.map((item, i) => (
               <ScrollReveal key={item} delay={0.05 * i}>
-                <div className="flex items-start gap-4 p-5 rounded-lg bg-background border border-border shadow-sm">
+                <div className="flex items-start gap-4 p-5 rounded-lg bg-background border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                   <span className="text-foreground font-medium text-base">{item}</span>
                 </div>
@@ -281,8 +338,13 @@ const CaseStudy = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding section-y bg-primary text-primary-foreground">
-        <div className="container-narrow text-center">
+      <section className="section-padding section-y bg-primary text-primary-foreground relative overflow-hidden">
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-[800px] h-[800px] rounded-full bg-primary-foreground/[0.03] blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="container-narrow text-center relative">
           <ScrollReveal>
             <h2 className="text-primary-foreground mx-auto max-w-2xl mb-6" style={{ textWrap: "balance" as any }}>
               See What This Looks Like In Your Intake Process
@@ -294,7 +356,7 @@ const CaseStudy = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.16}>
-            <Button variant="hero" size="xl" className="bg-accent-foreground text-primary hover:bg-accent-foreground/90">
+            <Button variant="hero" size="xl" className="bg-accent-foreground text-primary hover:bg-accent-foreground/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
               Identify Where You're Losing Revenue
               <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
