@@ -6,6 +6,7 @@ import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, UserX, Megaphone, ShieldAlert, PauseCircle, Clock, HeartPulse, History, CheckCircle2 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import { OpportunityCalculator } from "@/components/calculator/OpportunityCalculator";
 
 const whyBlocks = [
   { icon: Users, title: "Your team is buried", content: "New inquiries take priority. Old leads never get touched." },
@@ -276,6 +277,8 @@ const DormantLeads = () => {
           </div>
         </div>
       </section>
+
+      <OpportunityCalculator highlightCard="dormant" initialInputs={{ dormantLeads: 1200 }} />
 
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">

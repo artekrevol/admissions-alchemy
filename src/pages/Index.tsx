@@ -12,6 +12,7 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { PageLink } from "@/components/homepage/PageLink";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
 import { SEOHead } from "@/components/SEOHead";
+import { MiniCalculator } from "@/components/calculator/MiniCalculator";
 
 const Index = () => {
   return (
@@ -32,6 +33,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <ProblemSection />
+      <MiniCalculator />
       <LeakageSection />
 
       {/* Internal links after leakage */}

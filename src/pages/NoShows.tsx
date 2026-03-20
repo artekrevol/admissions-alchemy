@@ -6,6 +6,7 @@ import { PageLink } from "@/components/homepage/PageLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, VolumeX, Repeat, ShieldOff, Brain, Timer, Unlink, AlertTriangle, XCircle, CheckCircle2 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import { OpportunityCalculator } from "@/components/calculator/OpportunityCalculator";
 
 const whyBlocks = [
   { icon: Clock, title: "You book at peak emotion—but deliver later", content: "Patients call in crisis. You schedule them 10–14 days out. By then, urgency fades. Doubt replaces action." },
@@ -215,6 +216,8 @@ const NoShows = () => {
           </div>
         </div>
       </section>
+
+      <OpportunityCalculator highlightCard="noshow" initialInputs={{ scheduled: 30, noShowRate: 20 }} />
 
       {/* FINAL CTA */}
       <section className="section-padding section-y bg-primary text-primary-foreground">
