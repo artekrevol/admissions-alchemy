@@ -19,6 +19,7 @@ import { MiniCalculator } from "@/components/calculator/MiniCalculator";
 import { ByTheNumbers } from "@/components/homepage/ByTheNumbers";
 import { AsFeaturedIn } from "@/components/homepage/AsFeaturedIn";
 import { AfterYouBook } from "@/components/homepage/AfterYouBook";
+import { LeadershipSection } from "@/components/homepage/LeadershipSection";
 
 const Index = () => {
   return (
