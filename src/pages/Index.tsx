@@ -16,6 +16,9 @@ import { PageLink } from "@/components/homepage/PageLink";
 import { ScrollReveal } from "@/components/homepage/ScrollReveal";
 import { SEOHead } from "@/components/SEOHead";
 import { MiniCalculator } from "@/components/calculator/MiniCalculator";
+import { ByTheNumbers } from "@/components/homepage/ByTheNumbers";
+import { AsFeaturedIn } from "@/components/homepage/AsFeaturedIn";
+import { AfterYouBook } from "@/components/homepage/AfterYouBook";
 
 const Index = () => {
   return (
@@ -36,6 +39,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <TrustBar />
+      <AsFeaturedIn />
       <ProblemSection />
       <MiniCalculator />
       <LeakageSection />
@@ -58,6 +62,7 @@ const Index = () => {
       </section>
 
       <SystemSection />
+      <ByTheNumbers />
       <ImpactStrip />
       <ResultsSection />
       <ProofCarousel />
@@ -72,6 +77,7 @@ const Index = () => {
       </section>
 
       <ProcessSection />
+      <AfterYouBook />
       <ObjectionsSection />
       <CtaSection />
       <Footer />

@@ -1,96 +1,121 @@
-import { motion } from "framer-motion";
 import { ScrollReveal } from "./ScrollReveal";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
-const proofCards = [
+const caseStudies = [
   {
-    title: "Regional Addiction Treatment Provider",
+    title: "Kinekt — AI-Enhanced Patient Feedback",
+    headline: "How we reduced patient response times by 40% using AI.",
     stats: [
-      { value: "$840K", label: "annual revenue recovered" },
-      { value: "34%", label: "conversion rate achieved" },
-      { value: "83", label: "dormant leads reactivated" },
+      { value: "150%", label: "engagement increase" },
+      { value: "40%", label: "response time reduction" },
+      { value: "85%", label: "automated collection" },
+    ],
+    quote: "Kinekt simplified how patients schedule and communicate with us. We're now more responsive, and patient satisfaction is higher.",
+    quoteAuthor: "Laura Bennett, Healthcare Provider",
+    sourceUrl: "https://www.tekrevol.com/case-studies/kinekt/",
+  },
+  {
+    title: "MiloCare+ — Health Records Management",
+    headline: "Enterprise-Grade Security: Eliminating 95% of data errors.",
+    stats: [
+      { value: "97%", label: "data accuracy improvement" },
+      { value: "95%", label: "error reduction" },
+      { value: "60%", label: "faster data entry" },
+    ],
+    sourceUrl: "https://www.tekrevol.com/case-studies/milocare/",
+  },
+  {
+    title: "Libido Health — HIPAA-Compliant Wellness",
+    headline: "Scaling a HIPAA-compliant platform to 20,000+ active users.",
+    stats: [
+      { value: "150%", label: "user engagement increase" },
+      { value: "35%", label: "session no-show reduction" },
+      { value: "20K+", label: "active users in 3 months" },
     ],
   },
   {
-    title: "Multi-Location Behavioral Health",
+    title: "Nurse Practitioner — On-Demand Care",
+    headline: "Increasing booking efficiency by 45% for on-demand healthcare.",
     stats: [
-      { value: "41% → 18%", label: "no-show rate reduction" },
-      { value: "2x", label: "coordinator output" },
-      { value: "6 days", label: "time to admit (from 11)" },
-    ],
-  },
-  {
-    title: "Outpatient Treatment Center",
-    stats: [
-      { value: "22% → 34%", label: "conversion improvement" },
-      { value: "+22", label: "additional admits/month" },
-      { value: "3 weeks", label: "implementation time" },
-    ],
-  },
-  {
-    title: "Residential Treatment Facility",
-    stats: [
-      { value: "19", label: "admits from dormant leads" },
-      { value: "$960K", label: "database value unlocked" },
-      { value: "15%", label: "reactivation rate" },
+      { value: "35%", label: "wait time reduction" },
+      { value: "45%", label: "booking efficiency gain" },
+      { value: "50%", label: "appointment speed increase" },
     ],
   },
 ];
 
-function ProofCard({ card }: { card: (typeof proofCards)[0] }) {
+function CaseStudyCard({ study }: { study: (typeof caseStudies)[0] }) {
   return (
-    <div className="w-[320px] md:w-[380px] shrink-0 rounded-xl border border-border bg-background p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-5">
-        {card.title}
+    <div className="rounded-xl border border-border bg-background p-6 md:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2">
+        {study.title}
       </p>
-      <div className="space-y-4">
-        {card.stats.map((stat) => (
+      <p className="text-sm font-medium text-foreground mb-5 leading-snug">{study.headline}</p>
+      
+      <div className="space-y-3 mb-5">
+        {study.stats.map((stat) => (
           <div key={stat.label} className="flex items-baseline justify-between gap-3">
             <span className="font-serif text-xl md:text-2xl text-primary leading-none">{stat.value}</span>
             <span className="text-xs text-muted-foreground text-right">{stat.label}</span>
           </div>
         ))}
       </div>
+
+      {study.quote && (
+        <blockquote className="border-l-2 border-primary/20 pl-4 mb-4">
+          <p className="text-xs text-muted-foreground italic leading-relaxed" style={{ maxWidth: "none" }}>
+            "{study.quote}"
+          </p>
+          <cite className="text-xs font-medium text-foreground not-italic mt-1 block">
+            — {study.quoteAuthor}
+          </cite>
+        </blockquote>
+      )}
+
+      {study.sourceUrl && (
+        <a
+          href={study.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-accent transition-colors"
+        >
+          View full case study <ExternalLink className="w-3 h-3" />
+        </a>
+      )}
     </div>
   );
 }
 
 export function ProofCarousel() {
   return (
-    <section className="section-padding section-y overflow-hidden">
-      <div className="container-narrow mb-10">
-        <ScrollReveal>
-          <p className="label-text mb-4">Proven Results</p>
-        </ScrollReveal>
-        <ScrollReveal delay={0.06}>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="max-w-lg">Results that speak for themselves</h2>
-            <Link
-              to="/case-study"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
-            >
-              Read the full case study
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        </ScrollReveal>
-      </div>
+    <section className="section-padding section-y">
+      <div className="container-wide">
+        <div className="mb-10">
+          <ScrollReveal>
+            <p className="label-text mb-4">Named Healthcare Case Studies</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.06}>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="max-w-lg">Real clients. Real metrics. Real outcomes.</h2>
+              <Link
+                to="/case-study"
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+              >
+                Read the full case study
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
 
-      {/* Scrolling carousel */}
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-        <motion.div
-          className="flex gap-5 px-6 md:px-12"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        >
-          {[...proofCards, ...proofCards].map((card, i) => (
-            <ProofCard key={i} card={card} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {caseStudies.map((study, i) => (
+            <ScrollReveal key={study.title} delay={0.08 * i}>
+              <CaseStudyCard study={study} />
+            </ScrollReveal>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
