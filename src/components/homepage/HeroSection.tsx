@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "./ScrollReveal";
-import { ArrowRight, Shield, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { HeroVisual } from "./HeroVisual";
@@ -25,17 +25,7 @@ export function HeroSection() {
           {/* Left: copy */}
           <div>
             <ScrollReveal>
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <p className="label-text">For Healthcare Operators</p>
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
-                  <Shield className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-xs font-semibold text-primary">HIPAA Compliant</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
-                  <Shield className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-xs font-semibold text-primary">ISO 27001</span>
-                </div>
-              </div>
+              <p className="label-text mb-6">For Healthcare Operators</p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.08}>
@@ -81,7 +71,7 @@ export function HeroSection() {
           </ScrollReveal>
         </div>
 
-        {/* Social proof bar */}
+        {/* Social proof bar — unique stats not repeated elsewhere */}
         <ScrollReveal delay={0.36}>
           <div className="mt-14 pt-8 border-t border-border/50">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
@@ -91,18 +81,18 @@ export function HeroSection() {
               </div>
               <div className="hidden sm:block w-px h-10 bg-border" />
               <div>
-                <p className="font-serif text-2xl md:text-3xl text-primary leading-none">3 weeks</p>
-                <p className="text-xs text-muted-foreground mt-1">to deploy</p>
-              </div>
-              <div className="hidden sm:block w-px h-10 bg-border" />
-              <div>
                 <p className="font-serif text-2xl md:text-3xl text-primary leading-none">34%</p>
                 <p className="text-xs text-muted-foreground mt-1">conversion achieved</p>
               </div>
               <div className="hidden sm:block w-px h-10 bg-border" />
               <div>
-                <p className="font-serif text-2xl md:text-3xl text-primary leading-none">Forbes</p>
-                <p className="text-xs text-muted-foreground mt-1">ranked 3 consecutive years</p>
+                <p className="font-serif text-2xl md:text-3xl text-primary leading-none">3 weeks</p>
+                <p className="text-xs text-muted-foreground mt-1">to deploy</p>
+              </div>
+              <div className="hidden sm:block w-px h-10 bg-border" />
+              <div>
+                <p className="font-serif text-2xl md:text-3xl text-primary leading-none">HIPAA + ISO</p>
+                <p className="text-xs text-muted-foreground mt-1">certified & compliant</p>
               </div>
             </div>
           </div>

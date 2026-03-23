@@ -24,7 +24,10 @@ export function CtaSection() {
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.16}>
-          <Button variant="hero" size="xl" className="bg-accent-foreground text-primary hover:bg-accent-foreground/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+          <Button
+            size="xl"
+            className="bg-background text-primary hover:bg-background/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-base font-semibold"
+          >
             Book Your Revenue System Diagnostic
             <ArrowRight className="w-5 h-5 ml-1" />
           </Button>

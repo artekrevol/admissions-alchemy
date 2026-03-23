@@ -3,36 +3,34 @@ import { ScrollReveal } from "./ScrollReveal";
 const publications = [
   { name: "Forbes", url: "https://www.forbes.com/companies/tekrevol/" },
   { name: "Inc.", url: "https://www.inc.com/profile/TekRevol" },
-  { name: "Entrepreneur", url: "#" },
   { name: "Clutch", url: "https://clutch.co/profile/tekrevol" },
-  { name: "GoodFirms", url: "#" },
 ];
 
 export function AsFeaturedIn() {
   return (
-    <section className="section-padding py-10 md:py-14 border-y border-border/50">
+    <section className="section-padding py-8 md:py-10">
       <div className="container-wide">
         <ScrollReveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-8 text-center">
-            As Featured In
-          </p>
-        </ScrollReveal>
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
-          {publications.map((pub, i) => (
-            <ScrollReveal key={pub.name} delay={0.06 * i}>
-              <a
-                href={pub.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 transition-opacity hover:opacity-100 opacity-50"
-              >
-                <span className="font-serif text-2xl md:text-3xl text-foreground tracking-tight group-hover:text-primary transition-colors">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground shrink-0">
+              As Featured In
+            </p>
+            <div className="hidden sm:block w-px h-5 bg-border" />
+            <div className="flex items-center gap-8 md:gap-12">
+              {publications.map((pub) => (
+                <a
+                  key={pub.name}
+                  href={pub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-serif text-xl md:text-2xl text-muted-foreground/60 hover:text-primary transition-colors duration-300"
+                >
                   {pub.name}
-                </span>
-              </a>
-            </ScrollReveal>
-          ))}
-        </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

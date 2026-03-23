@@ -7,7 +7,6 @@ const stats = [
   { value: 50, suffix: "+", label: "Healthcare Apps Delivered", prefix: "" },
   { value: 100, suffix: "%", label: "HIPAA Compliance Record", prefix: "" },
   { value: 500, suffix: "+", label: "Global Engineers & Specialists", prefix: "" },
-  { value: 4.9, suffix: "/5.0", label: "Clutch Rating (Verified Reviews)", prefix: "", isDecimal: true },
   { value: 829, suffix: "%", label: "Growth Rate (Inc. 5000)", prefix: "" },
 ];
 
@@ -18,8 +17,8 @@ export function ByTheNumbers() {
   return (
     <section
       ref={ref}
-      className="section-padding py-14 md:py-20"
-      style={{ backgroundColor: "hsl(var(--surface-cool))" }}
+      className="section-padding section-y-tight"
+      style={{ backgroundColor: "hsl(var(--surface-warm))" }}
     >
       <div className="container-wide">
         <ScrollReveal>
@@ -31,10 +30,10 @@ export function ByTheNumbers() {
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, i) => (
             <ScrollReveal key={stat.label} delay={0.08 * i}>
-              <div className="text-center p-4 rounded-xl bg-background border border-border/60 shadow-sm">
+              <div className="text-center p-5 md:p-6 rounded-xl bg-background border border-border/60 shadow-sm">
                 <p className="font-serif text-3xl md:text-4xl text-primary leading-none mb-2">
                   {inView ? (
                     <AnimatedCounter
