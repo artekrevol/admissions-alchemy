@@ -26,9 +26,10 @@ export function StickyCtaBar() {
             <p className="hidden sm:block text-sm font-medium text-foreground">
               Stop losing patients between inquiry and intake.
             </p>
-            <Button variant="hero" size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200">
-              Identify Where You're Losing Revenue
-              <ArrowRight className="w-4 h-4 ml-1" />
+            <Button variant="hero" size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200 text-sm sm:text-base">
+              <span className="sm:hidden">Identify Revenue Loss</span>
+              <span className="hidden sm:inline">Identify Where You're Losing Revenue</span>
+              <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
             </Button>
           </div>
         </motion.div>

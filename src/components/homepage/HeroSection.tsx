@@ -45,9 +45,10 @@ export function HeroSection() {
 
             <ScrollReveal delay={0.24}>
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                <Button variant="hero" size="xl">
-                  Identify Where You're Losing Revenue
-                  <ArrowRight className="w-5 h-5 ml-1" />
+                <Button variant="hero" size="xl" className="w-full sm:w-auto">
+                  <span className="sm:hidden">Find Your Revenue Loss</span>
+                  <span className="hidden sm:inline">Identify Where You're Losing Revenue</span>
+                  <ArrowRight className="w-5 h-5 ml-1 shrink-0" />
                 </Button>
                 <Link to="/how-it-works">
                   <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
