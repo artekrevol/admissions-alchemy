@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -29,7 +29,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => { setOpen(false); }, [location.pathname]);
 
   const isActive = (href: string) => location.pathname === href;
@@ -104,6 +103,16 @@ export function Navbar() {
               {page.label}
             </Link>
           ))}
+
+          {/* Phone number */}
+          <a
+            href="tel:+15551234567"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            (555) 123-4567
+          </a>
+
           <div className="ml-3">
             <Button variant="hero" size="lg">Book a Diagnostic Call</Button>
           </div>
@@ -148,6 +157,9 @@ export function Navbar() {
                   {page.label}
                 </Link>
               ))}
+              <a href="tel:+15551234567" className="flex items-center gap-2 px-3 py-2.5 text-sm text-foreground/80">
+                <Phone className="w-4 h-4" /> (555) 123-4567
+              </a>
               <Button variant="hero" size="lg" className="w-full mt-4">Book a Diagnostic Call</Button>
             </div>
           </motion.div>

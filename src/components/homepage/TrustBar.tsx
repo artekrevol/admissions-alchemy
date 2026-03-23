@@ -1,39 +1,37 @@
-import { motion } from "framer-motion";
+import { ScrollReveal } from "./ScrollReveal";
+import { Shield, Award, Star, TrendingUp } from "lucide-react";
 
-const partners = [
-  "Regional Health Systems",
-  "Addiction Treatment Centers",
-  "Behavioral Health Networks",
-  "Multi-Location Clinics",
-  "Outpatient Providers",
-  "Residential Treatment Facilities",
+const certifications = [
+  { icon: Shield, label: "HIPAA Compliant", detail: "Solutions Provider" },
+  { icon: Shield, label: "ISO 27001", detail: "Certified" },
+  { icon: Award, label: "Forbes", detail: "Best Startup Employers '24–'26" },
+  { icon: TrendingUp, label: "Inc. 5000", detail: "#769 · 829% Growth" },
+  { icon: Star, label: "Clutch", detail: "#1 Web Dev Company Globally" },
+  { icon: Award, label: "HL7 FHIR", detail: "Certified Integration" },
 ];
 
 export function TrustBar() {
   return (
-    <section className="section-padding py-8 md:py-10 border-b border-border/50 overflow-hidden">
+    <section className="section-padding py-8 md:py-12 border-b border-border/50" style={{ backgroundColor: "hsl(var(--surface-cool))" }}>
       <div className="container-wide">
-        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-6">
-          Trusted by healthcare operators nationwide
-        </p>
-      </div>
-      <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-        <motion.div
-          className="flex gap-12 whitespace-nowrap"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        >
-          {[...partners, ...partners].map((name, i) => (
-            <div key={i} className="flex items-center gap-3 shrink-0">
-              <div className="w-2 h-2 rounded-full bg-primary/20" />
-              <span className="text-sm font-medium text-muted-foreground/70 tracking-wide">{name}</span>
-            </div>
+        <ScrollReveal>
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-6 text-center">
+            Backed by an engineering team with a track record of excellence
+          </p>
+        </ScrollReveal>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+          {certifications.map((cert, i) => (
+            <ScrollReveal key={cert.label} delay={0.05 * i}>
+              <div className="flex flex-col items-center text-center p-4 rounded-xl bg-background border border-border/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                  <cert.icon className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-sm font-semibold text-foreground leading-tight">{cert.label}</span>
+                <span className="text-xs text-muted-foreground mt-0.5">{cert.detail}</span>
+              </div>
+            </ScrollReveal>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
