@@ -4,8 +4,9 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 
 const caseStudies = [
   {
-    title: "Kinekt — AI-Enhanced Patient Feedback",
-    headline: "How we reduced patient response times by 40% using AI.",
+    title: "Kinekt",
+    subtitle: "AI-Enhanced Patient Feedback",
+    headline: "Reduced patient response times by 40% using AI.",
     stats: [
       { value: "150%", label: "engagement increase" },
       { value: "40%", label: "response time reduction" },
@@ -16,8 +17,9 @@ const caseStudies = [
     sourceUrl: "https://www.tekrevol.com/case-studies/kinekt/",
   },
   {
-    title: "MiloCare+ — Health Records Management",
-    headline: "Enterprise-Grade Security: Eliminating 95% of data errors.",
+    title: "MiloCare+",
+    subtitle: "Health Records Management",
+    headline: "Eliminated 95% of data errors with enterprise-grade security.",
     stats: [
       { value: "97%", label: "data accuracy improvement" },
       { value: "95%", label: "error reduction" },
@@ -26,8 +28,9 @@ const caseStudies = [
     sourceUrl: "https://www.tekrevol.com/case-studies/milocare/",
   },
   {
-    title: "Libido Health — HIPAA-Compliant Wellness",
-    headline: "Scaling a HIPAA-compliant platform to 20,000+ active users.",
+    title: "Libido Health",
+    subtitle: "HIPAA-Compliant Wellness",
+    headline: "Scaled to 20,000+ active users in 3 months.",
     stats: [
       { value: "150%", label: "user engagement increase" },
       { value: "35%", label: "session no-show reduction" },
@@ -35,8 +38,9 @@ const caseStudies = [
     ],
   },
   {
-    title: "Nurse Practitioner — On-Demand Care",
-    headline: "Increasing booking efficiency by 45% for on-demand healthcare.",
+    title: "Nurse Practitioner",
+    subtitle: "On-Demand Care",
+    headline: "Increased booking efficiency by 45% for on-demand healthcare.",
     stats: [
       { value: "35%", label: "wait time reduction" },
       { value: "45%", label: "booking efficiency gain" },
@@ -47,10 +51,11 @@ const caseStudies = [
 
 function CaseStudyCard({ study }: { study: (typeof caseStudies)[0] }) {
   return (
-    <div className="rounded-xl border border-border bg-background p-6 md:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2">
-        {study.title}
-      </p>
+    <div className="rounded-xl border border-border bg-background p-6 md:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+      <div className="mb-5">
+        <p className="text-sm font-semibold text-foreground">{study.title}</p>
+        <p className="text-xs text-muted-foreground">{study.subtitle}</p>
+      </div>
       <p className="text-sm font-medium text-foreground mb-5 leading-snug">{study.headline}</p>
       
       <div className="space-y-3 mb-5">
@@ -62,38 +67,41 @@ function CaseStudyCard({ study }: { study: (typeof caseStudies)[0] }) {
         ))}
       </div>
 
-      {study.quote && (
-        <blockquote className="border-l-2 border-primary/20 pl-4 mb-4">
-          <p className="text-xs text-muted-foreground italic leading-relaxed" style={{ maxWidth: "none" }}>
-            "{study.quote}"
-          </p>
-          <cite className="text-xs font-medium text-foreground not-italic mt-1 block">
-            — {study.quoteAuthor}
-          </cite>
-        </blockquote>
-      )}
+      {/* Spacer to push bottom content down for equal card heights */}
+      <div className="mt-auto">
+        {study.quote && (
+          <blockquote className="border-l-2 border-primary/20 pl-4 mb-4">
+            <p className="text-xs text-muted-foreground italic leading-relaxed" style={{ maxWidth: "none" }}>
+              "{study.quote}"
+            </p>
+            <cite className="text-xs font-medium text-foreground not-italic mt-1 block">
+              — {study.quoteAuthor}
+            </cite>
+          </blockquote>
+        )}
 
-      {study.sourceUrl && (
-        <a
-          href={study.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-accent transition-colors"
-        >
-          View full case study <ExternalLink className="w-3 h-3" />
-        </a>
-      )}
+        {study.sourceUrl && (
+          <a
+            href={study.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-accent transition-colors"
+          >
+            View full case study <ExternalLink className="w-3 h-3" />
+          </a>
+        )}
+      </div>
     </div>
   );
 }
 
 export function ProofCarousel() {
   return (
-    <section className="section-padding section-y">
+    <section className="section-padding section-y" style={{ backgroundColor: "hsl(var(--surface-warm))" }}>
       <div className="container-wide">
         <div className="mb-10">
           <ScrollReveal>
-            <p className="label-text mb-4">Named Healthcare Case Studies</p>
+            <p className="label-text mb-4">Proven in Healthcare</p>
           </ScrollReveal>
           <ScrollReveal delay={0.06}>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">

@@ -15,13 +15,9 @@ export function ImpactStrip() {
   const inView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section
-      ref={ref}
-      className="section-padding py-14 md:py-20"
-      style={{ backgroundColor: "hsl(var(--surface-cool))" }}
-    >
+    <section ref={ref} className="section-padding py-12 md:py-16 border-y border-border/40">
       <div className="container-wide">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           {stats.map((stat, i) => (
             <ScrollReveal key={stat.label} delay={0.1 * i}>
               <div className="text-center">

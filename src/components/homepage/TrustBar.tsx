@@ -1,13 +1,11 @@
 import { ScrollReveal } from "./ScrollReveal";
-import { Shield, Award, Star, TrendingUp } from "lucide-react";
+import { Award, Star, TrendingUp, Trophy } from "lucide-react";
 
 const certifications = [
-  { icon: Shield, label: "HIPAA Compliant", detail: "Solutions Provider" },
-  { icon: Shield, label: "ISO 27001", detail: "Certified" },
   { icon: Award, label: "Forbes", detail: "Best Startup Employers '24–'26" },
   { icon: TrendingUp, label: "Inc. 5000", detail: "#769 · 829% Growth" },
   { icon: Star, label: "Clutch", detail: "#1 Web Dev Company Globally" },
-  { icon: Award, label: "HL7 FHIR", detail: "Certified Integration" },
+  { icon: Trophy, label: "Timmy Award", detail: "Best Tech Startup, Dallas" },
 ];
 
 export function TrustBar() {
@@ -19,7 +17,7 @@ export function TrustBar() {
             Backed by an engineering team with a track record of excellence
           </p>
         </ScrollReveal>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {certifications.map((cert, i) => (
             <ScrollReveal key={cert.label} delay={0.05 * i}>
               <div className="flex flex-col items-center text-center p-4 rounded-xl bg-background border border-border/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">

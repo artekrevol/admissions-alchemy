@@ -40,15 +40,21 @@ const Index = () => {
       <HeroSection />
       <TrustBar />
       <AsFeaturedIn />
+
+      {/* Problem — warm bg */}
       <ProblemSection />
+
+      {/* Calculator — cool bg */}
       <MiniCalculator />
+
+      {/* Leakage — white bg */}
       <LeakageSection />
 
-      {/* Internal links after leakage */}
-      <section className="section-padding py-12 md:py-16">
+      {/* Deep dive links */}
+      <section className="section-padding py-10 md:py-14" style={{ backgroundColor: "hsl(var(--surface-warm))" }}>
         <div className="container-narrow">
           <ScrollReveal>
-            <p className="label-text mb-6">Go Deeper</p>
+            <p className="label-text mb-5">Go Deeper</p>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <ScrollReveal delay={0.06}>
@@ -61,14 +67,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* System — cool bg */}
       <SystemSection />
+
+      {/* By the Numbers — warm bg (alternates from cool) */}
       <ByTheNumbers />
+
+      {/* Impact strip — neutral divider */}
       <ImpactStrip />
+
+      {/* Results — white bg */}
       <ResultsSection />
+
+      {/* Proof — warm bg */}
       <ProofCarousel />
 
       {/* Case study teaser */}
-      <section className="section-padding py-12 md:py-16" style={{ backgroundColor: "hsl(var(--surface-warm))" }}>
+      <section className="section-padding py-10 md:py-14">
         <div className="container-narrow">
           <ScrollReveal>
             <PageLink href="/case-study" label="$840K Recovered — Read the Case Study" description="See how one provider fixed their intake and recovered $840K in annual revenue." />
@@ -76,9 +91,16 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Process — cool bg */}
       <ProcessSection />
+
+      {/* After You Book — cool bg handled internally */}
       <AfterYouBook />
+
+      {/* Objections — white bg */}
       <ObjectionsSection />
+
+      {/* Final CTA — primary bg */}
       <CtaSection />
       <Footer />
       <StickyCtaBar />

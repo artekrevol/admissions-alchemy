@@ -24,7 +24,7 @@ const steps = [
 
 export function AfterYouBook() {
   return (
-    <section className="section-padding py-16 md:py-24">
+    <section className="section-padding section-y-tight" style={{ backgroundColor: "hsl(var(--surface-cool))" }}>
       <div className="container-narrow">
         <ScrollReveal>
           <p className="label-text mb-4">What Happens After You Book</p>
@@ -35,20 +35,18 @@ export function AfterYouBook() {
           </h2>
         </ScrollReveal>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {steps.map((step, i) => (
             <ScrollReveal key={step.number} delay={0.1 * i}>
-              <div className="flex gap-5 items-start p-6 rounded-xl bg-background border border-border shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <step.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Step {step.number}</span>
-                    <h3 className="font-sans font-semibold text-lg text-foreground">{step.title}</h3>
+              <div className="p-6 rounded-xl bg-background border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <step.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                  <span className="text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full">Step {step.number}</span>
                 </div>
+                <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             </ScrollReveal>
           ))}

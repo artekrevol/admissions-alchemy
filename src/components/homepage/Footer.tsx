@@ -7,11 +7,10 @@ export function Footer() {
       <div className="container-wide">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div className="md:col-span-1">
-            <Link to="/" className="font-serif text-xl text-display mb-3 block hover:opacity-80 transition-opacity">PatientFlow</Link>
+            <Link to="/" className="font-serif text-xl text-foreground mb-3 block hover:opacity-80 transition-opacity">PatientFlow</Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               The revenue system for healthcare operators.
             </p>
-            {/* Powered by TekRevol badge */}
             <a
               href="https://www.tekrevol.com/"
               target="_blank"
@@ -73,14 +72,9 @@ export function Footer() {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} PatientFlow. All rights reserved.
           </p>
-          <a
-            href="https://www.tekrevol.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Powered by TekRevol — Forbes-Ranked, Inc. 5000, Clutch #1 Global
-          </a>
+          <p className="text-xs text-muted-foreground">
+            Forbes-Ranked · Inc. 5000 · Clutch #1 Global
+          </p>
         </div>
       </div>
     </footer>
