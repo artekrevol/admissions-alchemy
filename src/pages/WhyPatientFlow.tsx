@@ -137,8 +137,8 @@ const objections = [
     a: "Your staff is great — when they're available. But after hours, during lunch, and on weekends, calls go to voicemail. PatientFlow ensures every inquiry gets a live response, 24/7.",
   },
   {
-    q: '"We tried software before and it didn't work."',
-    a: "Software fails when no one operates it. PatientFlow isn't software you buy — it's a system we install and run. You get results, not another login.",
+    q: "\u201CWe tried software before and it didn\u2019t work.\u201D",
+    a: "Software fails when no one operates it. PatientFlow isn\u2019t software you buy \u2014 it\u2019s a system we install and run. You get results, not another login.",
   },
 ];
 
