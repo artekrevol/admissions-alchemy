@@ -72,6 +72,7 @@ const newsItems: NewsItem[] = [
 export function InTheNewsSection() {
   return (
     <section
+      id="in-the-news"
       className="section-padding py-16 md:py-20"
       style={{ backgroundColor: "hsl(var(--surface-warm))" }}
     >
