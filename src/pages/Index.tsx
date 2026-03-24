@@ -80,8 +80,8 @@ const Index = () => {
       {/* Results — white bg */}
       <ResultsSection />
 
-      {/* Leadership — warm bg */}
-      <LeadershipSection />
+      {/* In The News — warm bg */}
+      <InTheNewsSection />
 
       {/* Proof — warm bg */}
       <ProofCarousel />

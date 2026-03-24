@@ -40,6 +40,7 @@ export function Footer() {
               <Link to="/why-patientflow" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Why PatientFlow</Link>
               <Link to="/case-study" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Case Study</Link>
               <Link to="/sprint" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">3-Week Sprint</Link>
+              <Link to="/#in-the-news" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">In The News</Link>
             </div>
           </div>
 
