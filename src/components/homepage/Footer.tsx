@@ -37,6 +37,7 @@ export function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-4">Company</p>
             <div className="space-y-2.5">
               <Link to="/how-it-works" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">How It Works</Link>
+              <Link to="/why-patientflow" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Why PatientFlow</Link>
               <Link to="/case-study" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Case Study</Link>
               <Link to="/sprint" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">3-Week Sprint</Link>
             </div>

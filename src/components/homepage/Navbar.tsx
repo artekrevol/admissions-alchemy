@@ -13,6 +13,7 @@ const navPages = [
 
 const secondaryPages = [
   { label: "How It Works", href: "/how-it-works" },
+  { label: "Why PatientFlow", href: "/why-patientflow" },
   { label: "Case Study", href: "/case-study" },
   { label: "3-Week Sprint", href: "/sprint" },
 ];
