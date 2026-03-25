@@ -11,6 +11,7 @@ import DormantLeads from "./pages/DormantLeads.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
 import Sprint from "./pages/Sprint.tsx";
+import EngagementModel from "./pages/EngagementModel.tsx";
 import WhyPatientFlow from "./pages/WhyPatientFlow.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
