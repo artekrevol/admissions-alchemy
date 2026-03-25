@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/homepage/HeroSection";
 import { TrustBar } from "@/components/homepage/TrustBar";
 import { ProblemSection } from "@/components/homepage/ProblemSection";
 import { LeakageSection } from "@/components/homepage/LeakageSection";
-import { SystemSection } from "@/components/homepage/SystemSection";
 import { ImpactStrip } from "@/components/homepage/ImpactStrip";
 import { ResultsSection } from "@/components/homepage/ResultsSection";
 import { ProofCarousel } from "@/components/homepage/ProofCarousel";
