@@ -67,10 +67,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* System — cool bg */}
-      <SystemSection />
-
-      {/* By the Numbers — warm bg (alternates from cool) */}
+      {/* By the Numbers — warm bg */}
       <ByTheNumbers />
 
       {/* Impact strip — neutral divider */}
