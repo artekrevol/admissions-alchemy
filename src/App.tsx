@@ -13,6 +13,7 @@ import CaseStudy from "./pages/CaseStudy.tsx";
 import Sprint from "./pages/Sprint.tsx";
 import WhyPatientFlow from "./pages/WhyPatientFlow.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/revenue-leakage" element={<RevenueLeakage />} />

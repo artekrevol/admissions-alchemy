@@ -1,5 +1,6 @@
 import { ScrollReveal } from "./ScrollReveal";
-import { ClipboardCheck, MapPin, Presentation } from "lucide-react";
+import { ClipboardCheck, MapPin, Presentation, ArrowRight, Shield, RefreshCw } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const steps = [
   {
@@ -22,6 +23,11 @@ const steps = [
   },
 ];
 
+const integrations = [
+  { icon: Shield, text: "HIPAA-compliant & ISO-certified" },
+  { icon: RefreshCw, text: "Integrates with your existing EHR & CRM—no system replacement" },
+];
+
 export function AfterYouBook() {
   return (
     <section className="section-padding section-y-tight" style={{ backgroundColor: "hsl(var(--surface-cool))" }}>
@@ -35,7 +41,7 @@ export function AfterYouBook() {
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
           {steps.map((step, i) => (
             <ScrollReveal key={step.number} delay={0.1 * i}>
               <div className="p-6 rounded-xl bg-background border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 h-full">
@@ -51,6 +57,31 @@ export function AfterYouBook() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Integration assurances */}
+        <ScrollReveal delay={0.35}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8">
+            {integrations.map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <item.icon className="w-4 h-4 text-primary shrink-0" />
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        {/* CTA */}
+        <ScrollReveal delay={0.4}>
+          <div className="text-center">
+            <Button variant="hero" size="xl">
+              Start Your Free Diagnostic Call
+              <ArrowRight className="w-5 h-5 ml-1" />
+            </Button>
+            <p className="text-xs text-muted-foreground mt-3">
+              No risk of data loss. No obligation. See exactly where patients are dropping off.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

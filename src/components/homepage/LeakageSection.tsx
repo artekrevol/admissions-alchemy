@@ -1,33 +1,39 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { PhoneOff, MailX, CalendarX, UserX, DatabaseZap } from "lucide-react";
 
 const stages = [
   {
+    icon: PhoneOff,
     stage: "Inquiry → First Contact",
-    body: "38% of inquiries never get a callback within 24 hours. Of those, 67% will never be reached. You paid for that lead. It's gone.",
+    body: "38% of patient inquiries never get a callback within 24 hours. Of those, 67% will never be reached. You paid for that referral. It's gone.",
     pct: 100,
     lost: 38,
   },
   {
+    icon: MailX,
     stage: "First Contact → Follow-Up",
-    body: "You made contact. Now what? Without structured follow-up over the next 5–7 days, conversion drops by half. Most intake teams do one follow-up, maybe two, then move on.",
+    body: "You made contact. Now what? Without structured patient outreach over the next 5–7 days, admission rates drop by half.",
     pct: 62,
     lost: 31,
   },
   {
+    icon: CalendarX,
     stage: "Follow-Up → Scheduled Appointment",
-    body: "Even when someone says \"I'm interested,\" the gap between interest and booking is where deals die. If your coordinator is juggling 40 other tasks, scheduling gets delayed.",
+    body: "Even when someone says \"I'm interested,\" the gap between interest and booking is where patients are lost. Coordinators juggling 40 tasks can't keep up.",
     pct: 31,
     lost: 8,
   },
   {
+    icon: UserX,
     stage: "Scheduled → Show Rate",
-    body: "They're on the calendar. Then they no-show. No reminder sequence. No confirmation loop. The appointment evaporates. Empty chair = lost revenue.",
+    body: "They're on the calendar. Then they no-show. No reminder sequence. No confirmation loop. Empty chair = missed admission.",
     pct: 23,
     lost: 5,
   },
   {
+    icon: DatabaseZap,
     stage: "Discharged → Reactivation",
     body: "Thousands of past patients and dormant inquiries sit in your system. Most will never hear from you again. Reactivation campaigns convert at 15–20%.",
     pct: 18,
@@ -72,20 +78,25 @@ export function LeakageSection() {
           <p className="label-text mb-4">Revenue Leakage</p>
         </ScrollReveal>
         <ScrollReveal delay={0.06}>
-          <h2 className="max-w-2xl mb-4">Where patients disappear from your pipeline</h2>
+          <h2 className="max-w-2xl mb-4">Where You're Losing 40% of Your Patients (and Revenue)</h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <p className="text-muted-foreground mb-14 max-w-xl">
-            The problem isn't volume. It's what happens after the inquiry comes in.
+            The problem isn't patient volume. It's what happens after the inquiry comes in.
           </p>
         </ScrollReveal>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {stages.map((stage, i) => (
             <ScrollReveal key={stage.stage} delay={0.06}>
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-5 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-5 items-start p-4 rounded-xl bg-background border border-border/60 shadow-sm">
                 <div>
-                  <p className="text-sm font-semibold text-foreground mb-2">{stage.stage}</p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                      <stage.icon className="w-3.5 h-3.5 text-primary" />
+                    </div>
+                    <p className="text-sm font-semibold text-foreground">{stage.stage}</p>
+                  </div>
                   <FunnelBar pct={stage.pct} lost={stage.lost} delay={0.1 * i} />
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{stage.body}</p>
@@ -97,7 +108,7 @@ export function LeakageSection() {
         <ScrollReveal delay={0.5}>
           <div className="mt-14 p-6 rounded-xl border-2 border-accent/20 bg-accent/[0.04]">
             <p className="text-lg font-semibold text-foreground text-center" style={{ maxWidth: "none" }}>
-              Every stage leaks. The cumulative loss is why revenue feels unpredictable even when inquiry volume stays stable.
+              Every stage leaks. The cumulative loss is why revenue feels unpredictable even when patient volume stays stable.
             </p>
           </div>
         </ScrollReveal>
