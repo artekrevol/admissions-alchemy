@@ -50,7 +50,7 @@ export function Footer() {
               href="#"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
             >
-              Book a Diagnostic Call
+              Request a Pipeline Audit
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
             <p className="text-sm text-muted-foreground mt-3">
