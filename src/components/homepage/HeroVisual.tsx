@@ -62,7 +62,7 @@ export function HeroVisual() {
             {/* Success pulse on Reactivation & Auto Follow-Up */}
             {node.pulse && (
               <motion.div
-                className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-green-500"
+                className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-primary"
                 animate={{ scale: [1, 1.4, 1], opacity: [1, 0.4, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
