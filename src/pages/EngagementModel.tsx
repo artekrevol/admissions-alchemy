@@ -13,7 +13,7 @@ const steps = [
     icon: Search,
     title: "The Admissions Pipeline Audit",
     price: "$2,500",
-    desc: "Before we build anything, we analyze 90 days of your historical lead data, listen to call recordings, and map your current CRM workflows. We deliver a concrete "Revenue Leakage Report" showing exactly where leads are dropping and how much revenue is leaking.",
+    desc: 'Before we build anything, we analyze 90 days of your historical lead data, listen to call recordings, and map your current CRM workflows. We deliver a concrete "Revenue Leakage Report" showing exactly where leads are dropping and how much revenue is leaking.',
     note: "This fee is 100% credited toward your implementation.",
   },
   {
