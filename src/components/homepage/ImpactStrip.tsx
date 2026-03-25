@@ -5,7 +5,7 @@ import { useInView } from "framer-motion";
 
 const stats = [
   { value: 840, prefix: "$", suffix: "K+", label: "Revenue recovered" },
-  { value: 34, suffix: "%", label: "Conversion achieved" },
+  { value: 34, suffix: "%", label: "Admission rate achieved" },
   { value: 40, suffix: "%", label: "No-show reduction" },
   { value: 3, suffix: " weeks", label: "To deploy" },
 ];
@@ -20,7 +20,7 @@ export function ImpactStrip() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           {stats.map((stat, i) => (
             <ScrollReveal key={stat.label} delay={0.1 * i}>
-              <div className="text-center">
+              <div className="flex flex-col items-center text-center p-4 rounded-xl bg-background/50 border border-border/40">
                 <p className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary leading-none mb-2">
                   {inView ? (
                     <AnimatedCounter
@@ -33,7 +33,7 @@ export function ImpactStrip() {
                     `${stat.prefix || ""}${stat.value}${stat.suffix || ""}`
                   )}
                 </p>
-                <p className="text-xs md:text-sm text-muted-foreground font-medium">{stat.label}</p>
+                <p className="text-xs md:text-sm text-foreground/70 font-medium">{stat.label}</p>
               </div>
             </ScrollReveal>
           ))}

@@ -34,20 +34,27 @@ export function HeroSection() {
               </h1>
             </ScrollReveal>
 
+            <ScrollReveal delay={0.12}>
+              <p className="text-sm font-semibold text-accent mb-6 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+                38% of patient inquiries never get a follow-up. That's revenue walking out the door.
+              </p>
+            </ScrollReveal>
+
             <ScrollReveal delay={0.16}>
               <p className="text-muted-foreground text-lg md:text-xl max-w-lg mb-4 leading-relaxed">
                 You're generating demand—but your current system lets too many patients slip through before they ever reach care.
               </p>
               <p className="text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
-                We install and run a patient conversion system that captures, follows up, and converts every inquiry—without adding headcount.
+                We install and run a patient conversion system that captures, follows up, and converts every inquiry—<strong className="text-foreground font-bold">without adding headcount.</strong>
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.24}>
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                  <span className="sm:hidden">Find Your Revenue Loss</span>
-                  <span className="hidden sm:inline">Identify Where You're Losing Revenue</span>
+                  <span className="sm:hidden">Start Free Diagnostic</span>
+                  <span className="hidden sm:inline">Start Your Free Diagnostic Call</span>
                   <ArrowRight className="w-5 h-5 ml-1 shrink-0" />
                 </Button>
                 <Link to="/how-it-works">
@@ -72,28 +79,28 @@ export function HeroSection() {
           </ScrollReveal>
         </div>
 
-        {/* Social proof bar — unique stats not repeated elsewhere */}
+        {/* Social proof bar — centered with animation */}
         <ScrollReveal delay={0.36}>
           <div className="mt-14 pt-8 border-t border-border/50">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 text-center">
               <div>
                 <p className="font-serif text-2xl md:text-3xl text-primary leading-none">$840K</p>
-                <p className="text-xs text-muted-foreground mt-1">recovered for one client</p>
+                <p className="text-xs text-foreground/60 font-medium mt-1">recovered for one client</p>
               </div>
               <div className="hidden sm:block w-px h-10 bg-border" />
               <div>
                 <p className="font-serif text-2xl md:text-3xl text-primary leading-none">34%</p>
-                <p className="text-xs text-muted-foreground mt-1">conversion achieved</p>
+                <p className="text-xs text-foreground/60 font-medium mt-1">admission rate achieved</p>
               </div>
               <div className="hidden sm:block w-px h-10 bg-border" />
               <div>
                 <p className="font-serif text-2xl md:text-3xl text-primary leading-none">3 weeks</p>
-                <p className="text-xs text-muted-foreground mt-1">to deploy</p>
+                <p className="text-xs text-foreground/60 font-medium mt-1">to deploy</p>
               </div>
               <div className="hidden sm:block w-px h-10 bg-border" />
               <div>
                 <p className="font-serif text-2xl md:text-3xl text-primary leading-none">HIPAA + ISO</p>
-                <p className="text-xs text-muted-foreground mt-1">certified & compliant</p>
+                <p className="text-xs text-foreground/60 font-medium mt-1">certified & compliant</p>
               </div>
             </div>
           </div>
