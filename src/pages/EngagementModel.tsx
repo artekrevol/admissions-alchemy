@@ -20,8 +20,8 @@ const steps = [
     number: "02",
     icon: Settings,
     title: "System Implementation",
-    price: "$5,000 upfront for early partners",
-    desc: "We install the PatientFlow architecture on top of your existing EHR/CRM. We build the automated speed-to-lead sequences, configure the routing logic, and integrate with your scheduling system—all within 3 weeks.",
+    price: "$0 upfront for early partners",
+    desc: "We install the PatientFlow architecture on top of your existing EHR/CRM. We build the automated follow-up sequences, the VOB routing, and the real-time pipeline dashboards. We waive the standard implementation fee for our initial case study partners.",
     note: null,
   },
   {
