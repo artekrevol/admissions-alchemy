@@ -39,7 +39,7 @@ export function Footer() {
               <Link to="/how-it-works" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">How It Works</Link>
               <Link to="/why-patientflow" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Why PatientFlow</Link>
               <Link to="/case-study" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Case Study</Link>
-              <Link to="/sprint" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">3-Week Sprint</Link>
+              <Link to="/engagement-model" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Engagement Model</Link>
               <Link to="/#in-the-news" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">In The News</Link>
             </div>
           </div>
