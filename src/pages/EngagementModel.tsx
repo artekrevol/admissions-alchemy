@@ -20,8 +20,8 @@ const steps = [
     number: "02",
     icon: Settings,
     title: "System Implementation",
-    price: "$5,000 upfront for early partners",
-    desc: "We install the PatientFlow architecture on top of your existing EHR/CRM. We build the automated speed-to-lead sequences, configure the routing logic, and integrate with your scheduling system—all within 3 weeks.",
+    price: "$0 upfront for early partners",
+    desc: "We install the PatientFlow architecture on top of your existing EHR/CRM. We build the automated follow-up sequences, the VOB routing, and the real-time pipeline dashboards. We waive the standard implementation fee for our initial case study partners.",
     note: null,
   },
   {
@@ -37,10 +37,10 @@ const steps = [
 const tiers = [
   {
     name: "Starter",
-    price: "Contact Us",
-    volume: "Up to 200 leads/mo",
-    engagementTarget: "≥ 50%",
-    meetingTarget: "≥ 15%",
+    price: "$1,500/mo",
+    volume: "Up to 250 leads/mo",
+    engagementTarget: "≥ 15%",
+    meetingTarget: "≥ 5%",
     features: [
       "Speed-to-Lead automation",
       "CRM routing",
@@ -50,10 +50,10 @@ const tiers = [
   },
   {
     name: "Growth",
-    price: "Contact Us",
-    volume: "200 – 500 leads/mo",
-    engagementTarget: "≥ 60%",
-    meetingTarget: "≥ 20%",
+    price: "$3,000/mo",
+    volume: "251 – 500 leads/mo",
+    engagementTarget: "≥ 20%",
+    meetingTarget: "≥ 8%",
     features: [
       "Everything in Starter",
       "30/60/90-day reactivation sequences for dormant leads",
@@ -63,10 +63,10 @@ const tiers = [
   },
   {
     name: "Scale",
-    price: "Contact Us",
-    volume: "500 – 1,000 leads/mo",
-    engagementTarget: "≥ 65%",
-    meetingTarget: "≥ 25%",
+    price: "$5,000/mo",
+    volume: "501 – 1,000 leads/mo",
+    engagementTarget: "≥ 25%",
+    meetingTarget: "≥ 12%",
     features: [
       "Everything in Growth",
       "Automated VOB routing",
@@ -77,10 +77,10 @@ const tiers = [
   },
   {
     name: "Enterprise",
-    price: "Contact Us",
+    price: "$8,000+/mo",
     volume: "1,000+ leads/mo",
-    engagementTarget: "≥ 70%",
-    meetingTarget: "≥ 30%",
+    engagementTarget: "≥ 30%",
+    meetingTarget: "≥ 15%",
     features: [
       "Full suite",
       "Dedicated account manager",
