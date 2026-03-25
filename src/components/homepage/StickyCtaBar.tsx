@@ -27,8 +27,8 @@ export function StickyCtaBar() {
               Stop losing patients between inquiry and intake.
             </p>
             <Button variant="hero" size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200 text-sm sm:text-base">
-              <span className="sm:hidden">Identify Revenue Loss</span>
-              <span className="hidden sm:inline">Identify Where You're Losing Revenue</span>
+              <span className="sm:hidden">Request Pipeline Audit</span>
+              <span className="hidden sm:inline">Request a Pipeline Audit</span>
               <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
             </Button>
           </div>

@@ -72,7 +72,7 @@ export function ProblemSection() {
             <ScrollReveal delay={0.36}>
               <div className="text-center md:text-left">
                 <Button variant="hero" size="lg">
-                  See How Much You're Losing
+                  Request a Pipeline Audit
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>

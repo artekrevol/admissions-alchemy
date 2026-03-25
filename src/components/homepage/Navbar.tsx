@@ -5,17 +5,17 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navPages = [
-  { label: "Revenue Leakage", href: "/revenue-leakage", desc: "Where patients drop off" },
-  { label: "Growth Engine", href: "/patient-growth-engine", desc: "Capture and convert every inquiry" },
-  { label: "No-Shows", href: "/no-shows", desc: "Fill every chair" },
-  { label: "Dormant Leads", href: "/dormant-leads", desc: "Recover lost revenue" },
+  { label: "Pipeline Audit", href: "/revenue-leakage", desc: "Find the leaks in your current system" },
+  { label: "Speed-to-Lead Engine", href: "/patient-growth-engine", desc: "Automate your 5-minute response" },
+  { label: "Lead Reactivation", href: "/dormant-leads", desc: "Wake up your dormant database" },
+  { label: "Full Intake Automation", href: "/no-shows", desc: "End-to-end pipeline visibility" },
 ];
 
 const secondaryPages = [
   { label: "How It Works", href: "/how-it-works" },
   { label: "Why PatientFlow", href: "/why-patientflow" },
   { label: "Case Study", href: "/case-study" },
-  { label: "3-Week Sprint", href: "/sprint" },
+  { label: "Engagement Model", href: "/engagement-model" },
 ];
 
 export function Navbar() {
@@ -115,7 +115,7 @@ export function Navbar() {
           </a>
 
           <div className="ml-3">
-            <Button variant="hero" size="lg">Book a Diagnostic Call</Button>
+            <Button variant="hero" size="lg">Request a Pipeline Audit</Button>
           </div>
         </div>
 
@@ -161,7 +161,7 @@ export function Navbar() {
               <a href="tel:+15551234567" className="flex items-center gap-2 px-3 py-2.5 text-sm text-foreground/80">
                 <Phone className="w-4 h-4" /> (555) 123-4567
               </a>
-              <Button variant="hero" size="lg" className="w-full mt-4">Book a Diagnostic Call</Button>
+              <Button variant="hero" size="lg" className="w-full mt-4">Request a Pipeline Audit</Button>
             </div>
           </motion.div>
         )}

@@ -11,6 +11,7 @@ import DormantLeads from "./pages/DormantLeads.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
 import Sprint from "./pages/Sprint.tsx";
+import EngagementModel from "./pages/EngagementModel.tsx";
 import WhyPatientFlow from "./pages/WhyPatientFlow.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/case-study" element={<CaseStudy />} />
           <Route path="/sprint" element={<Sprint />} />
+          <Route path="/engagement-model" element={<EngagementModel />} />
           <Route path="/why-patientflow" element={<WhyPatientFlow />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

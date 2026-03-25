@@ -28,7 +28,7 @@ export function CtaSection() {
             size="xl"
             className="bg-background text-primary hover:bg-background/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-base font-semibold"
           >
-            Book Your Revenue System Diagnostic
+            Request a Pipeline Audit
             <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
         </ScrollReveal>

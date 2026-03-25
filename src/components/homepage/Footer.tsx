@@ -26,10 +26,10 @@ export function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-4">Solutions</p>
             <div className="space-y-2.5">
-              <Link to="/revenue-leakage" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Revenue Leakage</Link>
-              <Link to="/patient-growth-engine" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Growth Engine</Link>
-              <Link to="/no-shows" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">No-Show Prevention</Link>
-              <Link to="/dormant-leads" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Dormant Leads</Link>
+              <Link to="/revenue-leakage" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Pipeline Audit</Link>
+              <Link to="/patient-growth-engine" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Speed-to-Lead Engine</Link>
+              <Link to="/dormant-leads" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Lead Reactivation</Link>
+              <Link to="/no-shows" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Full Intake Automation</Link>
             </div>
           </div>
 
@@ -39,7 +39,7 @@ export function Footer() {
               <Link to="/how-it-works" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">How It Works</Link>
               <Link to="/why-patientflow" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Why PatientFlow</Link>
               <Link to="/case-study" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Case Study</Link>
-              <Link to="/sprint" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">3-Week Sprint</Link>
+              <Link to="/engagement-model" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Engagement Model</Link>
               <Link to="/#in-the-news" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">In The News</Link>
             </div>
           </div>
@@ -50,7 +50,7 @@ export function Footer() {
               href="#"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
             >
-              Book a Diagnostic Call
+              Request a Pipeline Audit
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
             <p className="text-sm text-muted-foreground mt-3">
