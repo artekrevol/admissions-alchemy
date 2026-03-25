@@ -161,7 +161,7 @@ export function Navbar() {
               <a href="tel:+15551234567" className="flex items-center gap-2 px-3 py-2.5 text-sm text-foreground/80">
                 <Phone className="w-4 h-4" /> (555) 123-4567
               </a>
-              <Button variant="hero" size="lg" className="w-full mt-4">Book a Diagnostic Call</Button>
+              <Button variant="hero" size="lg" className="w-full mt-4">Request a Pipeline Audit</Button>
             </div>
           </motion.div>
         )}

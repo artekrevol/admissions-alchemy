@@ -53,8 +53,8 @@ export function HeroSection() {
             <ScrollReveal delay={0.24}>
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                  <span className="sm:hidden">Start Free Diagnostic</span>
-                  <span className="hidden sm:inline">Start Your Free Diagnostic Call</span>
+                  <span className="sm:hidden">Request Pipeline Audit</span>
+                  <span className="hidden sm:inline">Request a Pipeline Audit</span>
                   <ArrowRight className="w-5 h-5 ml-1 shrink-0" />
                 </Button>
                 <Link to="/how-it-works">

@@ -26,10 +26,10 @@ export function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-4">Solutions</p>
             <div className="space-y-2.5">
-              <Link to="/revenue-leakage" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Revenue Leakage</Link>
-              <Link to="/patient-growth-engine" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Growth Engine</Link>
-              <Link to="/no-shows" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">No-Show Prevention</Link>
-              <Link to="/dormant-leads" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Dormant Leads</Link>
+              <Link to="/revenue-leakage" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Pipeline Audit</Link>
+              <Link to="/patient-growth-engine" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Speed-to-Lead Engine</Link>
+              <Link to="/dormant-leads" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Lead Reactivation</Link>
+              <Link to="/no-shows" className="block text-sm text-foreground/70 hover:text-foreground transition-colors">Full Intake Automation</Link>
             </div>
           </div>
 

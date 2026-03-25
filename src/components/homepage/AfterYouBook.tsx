@@ -74,7 +74,7 @@ export function AfterYouBook() {
         <ScrollReveal delay={0.4}>
           <div className="text-center">
             <Button variant="hero" size="xl">
-              Start Your Free Diagnostic Call
+              Request a Pipeline Audit
               <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
             <p className="text-xs text-muted-foreground mt-3">
