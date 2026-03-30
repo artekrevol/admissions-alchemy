@@ -1,11 +1,14 @@
 import { ScrollReveal } from "./ScrollReveal";
-import { Award, Star, TrendingUp, Trophy } from "lucide-react";
+import logoForbes from "@/assets/logo-forbes.png";
+import logoInc5000 from "@/assets/logo-inc5000.png";
+import logoClutch from "@/assets/logo-clutch.png";
+import logoTimmy from "@/assets/logo-timmy.png";
 
 const certifications = [
-  { icon: Award, label: "Forbes", detail: "Best Startup Employers '24–'26" },
-  { icon: TrendingUp, label: "Inc. 5000", detail: "#769 · 829% Growth" },
-  { icon: Star, label: "Clutch", detail: "#1 Web Dev Company Globally" },
-  { icon: Trophy, label: "Timmy Award", detail: "Best Tech Startup, Dallas" },
+  { logo: logoForbes, label: "Forbes", detail: "Best Startup Employers '24–'26" },
+  { logo: logoInc5000, label: "Inc. 5000", detail: "#769 · 829% Growth" },
+  { logo: logoClutch, label: "Clutch", detail: "#1 Web Dev Company Globally" },
+  { logo: logoTimmy, label: "Timmy Award", detail: "Best Tech Startup, Dallas" },
 ];
 
 export function TrustBar() {
@@ -21,6 +24,7 @@ export function TrustBar() {
           {certifications.map((cert, i) => (
             <ScrollReveal key={cert.label} delay={0.05 * i}>
               <div className="flex flex-col items-center text-center p-4 rounded-xl bg-background border border-border/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <img src={cert.logo} alt={cert.label} loading="lazy" className="h-10 w-auto object-contain mb-3" />
                 <span className="text-sm font-semibold text-foreground leading-tight">{cert.label}</span>
                 <span className="text-xs text-muted-foreground mt-0.5">{cert.detail}</span>
               </div>
