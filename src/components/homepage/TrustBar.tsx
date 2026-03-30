@@ -21,9 +21,6 @@ export function TrustBar() {
           {certifications.map((cert, i) => (
             <ScrollReveal key={cert.label} delay={0.05 * i}>
               <div className="flex flex-col items-center text-center p-4 rounded-xl bg-background border border-border/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                  <cert.icon className="w-5 h-5 text-primary" />
-                </div>
                 <span className="text-sm font-semibold text-foreground leading-tight">{cert.label}</span>
                 <span className="text-xs text-muted-foreground mt-0.5">{cert.detail}</span>
               </div>
