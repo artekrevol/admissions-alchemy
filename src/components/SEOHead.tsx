@@ -8,7 +8,7 @@ interface SEOHeadProps {
   jsonLd?: Record<string, unknown>;
 }
 
-const BASE_URL = "https://patientflow.com";
+const BASE_URL = "https://censusflow.co";
 
 export function SEOHead({ title, description, path, type = "website", jsonLd }: SEOHeadProps) {
   const fullUrl = `${BASE_URL}${path}`;
