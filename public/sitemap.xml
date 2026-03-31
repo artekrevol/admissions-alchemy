@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://patientflow.com/</loc>
+    <loc>https://censusflow.co/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://patientflow.com/revenue-leakage</loc>
+    <loc>https://censusflow.co/revenue-leakage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://patientflow.com/patient-growth-engine</loc>
+    <loc>https://censusflow.co/patient-growth-engine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://patientflow.com/no-shows</loc>
+    <loc>https://censusflow.co/no-shows</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://patientflow.com/dormant-leads</loc>
+    <loc>https://censusflow.co/dormant-leads</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://patientflow.com/how-it-works</loc>
+    <loc>https://censusflow.co/how-it-works</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://patientflow.com/case-study</loc>
+    <loc>https://censusflow.co/case-study</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://patientflow.com/sprint</loc>
+    <loc>https://censusflow.co/sprint</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
