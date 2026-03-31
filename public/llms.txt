@@ -1,0 +1,89 @@
+# LLMs.txt for CensusFlow
+
+User-agent: *
+
+Allow: /
+
+# Website Description
+
+Site: CensusFlow
+
+Description: CensusFlow is a healthcare patient flow and operations platform designed to help hospitals and clinics optimize patient movement, reduce wait times, and improve overall efficiency.
+
+# Core Topics
+
+Topics:
+
+- Patient flow management
+
+- Hospital workflow optimization
+
+- Patient journey tracking
+
+- Healthcare operations software
+
+- Bed management systems
+
+- Patient scheduling and automation
+
+- Healthcare analytics and reporting
+
+# Key Use Cases
+
+Use-cases:
+
+- Reduce patient wait times
+
+- Improve hospital capacity management
+
+- Optimize emergency department workflows
+
+- Streamline clinic operations
+
+- Enhance patient experience
+
+# Target Audience
+
+Audience:
+
+- Hospital administrators
+
+- Healthcare operations managers
+
+- Clinic owners
+
+- Medical directors
+
+- Healthcare IT teams
+
+# Important Pages
+
+Pages:
+
+- /patient-flow-management
+
+- /hospital-workflow
+
+- /clinic-management
+
+- /bed-management
+
+- /contact
+
+# Content Policy
+
+Policy:
+
+- Public marketing content may be used for summarization and indexing
+
+- Do not include sensitive patient data
+
+- Respect healthcare data privacy (HIPAA compliance)
+
+# Sitemap
+
+Sitemap: https://censusflow.co/sitemap.xml
+
+# Preferred Citation
+
+Preferred-citation: CensusFlow (https://censusflow.co/)
