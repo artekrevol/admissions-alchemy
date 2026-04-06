@@ -246,14 +246,16 @@ export default function EngagementModel() {
                     ))}
                   </ul>
 
-                  <Button
-                    variant={tier.highlighted ? "hero" : "hero-outline"}
-                    size="lg"
-                    className="w-full"
-                  >
-                    Request a Pipeline Audit
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <Link to="/contact">
+                    <Button
+                      variant={tier.highlighted ? "hero" : "hero-outline"}
+                      size="lg"
+                      className="w-full"
+                    >
+                      Request a Pipeline Audit
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </ScrollReveal>
             ))}
