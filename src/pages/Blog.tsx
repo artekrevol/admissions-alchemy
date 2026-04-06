@@ -2,7 +2,7 @@ import { Navbar } from "@/components/homepage/Navbar";
 import { Footer } from "@/components/homepage/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+
 
 const placeholderPosts = [
   {
