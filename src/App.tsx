@@ -14,6 +14,7 @@ import Sprint from "./pages/Sprint.tsx";
 import EngagementModel from "./pages/EngagementModel.tsx";
 import WhyPatientFlow from "./pages/WhyPatientFlow.tsx";
 import Blog from "./pages/Blog.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
 
