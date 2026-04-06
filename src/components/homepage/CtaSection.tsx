@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "./ScrollReveal";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export function CtaSection() {
   return (
