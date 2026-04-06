@@ -116,7 +116,9 @@ export function Navbar() {
           </a>
 
           <div className="ml-3">
-            <Button variant="hero" size="lg">Request a Pipeline Audit</Button>
+            <Link to="/contact">
+              <Button variant="hero" size="lg">Request a Pipeline Audit</Button>
+            </Link>
           </div>
         </div>
 
