@@ -64,6 +64,7 @@ export default function Blog() {
       <SEOHead
         title="Blog | CensusFlow – Healthcare Operations Insights"
         description="Expert insights on patient flow management, healthcare operations, revenue optimization, and clinic growth strategies."
+        path="/blog"
       />
       <Navbar />
       <main className="pt-24 md:pt-28 pb-16">
