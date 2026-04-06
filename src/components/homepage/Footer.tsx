@@ -47,13 +47,13 @@ export function Footer() {
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-4">Get Started</p>
-            <a
-              href="#"
+            <Link
+              to="/contact"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
             >
               Request a Pipeline Audit
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground mt-3">
               <a href="tel:+15551234567" className="hover:text-foreground transition-colors">(555) 123-4567</a>
             </p>

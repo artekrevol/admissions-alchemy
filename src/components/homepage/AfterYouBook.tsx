@@ -73,10 +73,12 @@ export function AfterYouBook() {
         {/* CTA */}
         <ScrollReveal delay={0.4}>
           <div className="text-center">
-            <Button variant="hero" size="xl">
-              Request a Pipeline Audit
-              <ArrowRight className="w-5 h-5 ml-1" />
-            </Button>
+            <Link to="/contact">
+              <Button variant="hero" size="xl">
+                Request a Pipeline Audit
+                <ArrowRight className="w-5 h-5 ml-1" />
+              </Button>
+            </Link>
             <p className="text-xs text-muted-foreground mt-3">
               No risk of data loss. No obligation. See exactly where patients are dropping off.
             </p>

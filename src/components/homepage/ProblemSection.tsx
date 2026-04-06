@@ -72,10 +72,12 @@ export function ProblemSection() {
             </ScrollReveal>
             <ScrollReveal delay={0.36}>
               <div className="text-center md:text-left">
-                <Button variant="hero" size="lg">
-                  Request a Pipeline Audit
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
+                <Link to="/contact">
+                  <Button variant="hero" size="lg">
+                    Request a Pipeline Audit
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </Link>
               </div>
             </ScrollReveal>
           </div>
