@@ -1,6 +1,7 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { ClipboardCheck, MapPin, Presentation, ArrowRight, Shield, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const steps = [
   {

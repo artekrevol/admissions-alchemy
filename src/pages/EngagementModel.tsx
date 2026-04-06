@@ -6,6 +6,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Settings, Headphones, Shield, Info, CheckCircle2 } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
