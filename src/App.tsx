@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/sprint" element={<Sprint />} />
           <Route path="/engagement-model" element={<EngagementModel />} />
           <Route path="/why-patientflow" element={<WhyPatientFlow />} />
+          <Route path="/blog" element={<Blog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
