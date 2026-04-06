@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "./ScrollReveal";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export function CtaSection() {
   return (
@@ -24,13 +25,15 @@ export function CtaSection() {
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.16}>
-          <Button
-            size="xl"
-            className="bg-background text-primary hover:bg-background/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-base font-semibold"
-          >
-            Request a Pipeline Audit
-            <ArrowRight className="w-5 h-5 ml-1" />
-          </Button>
+          <Link to="/contact">
+            <Button
+              size="xl"
+              className="bg-background text-primary hover:bg-background/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-base font-semibold"
+            >
+              Request a Pipeline Audit
+              <ArrowRight className="w-5 h-5 ml-1" />
+            </Button>
+          </Link>
         </ScrollReveal>
       </div>
     </section>

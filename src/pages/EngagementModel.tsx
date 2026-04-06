@@ -6,6 +6,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Settings, Headphones, Shield, Info, CheckCircle2 } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -246,14 +247,16 @@ export default function EngagementModel() {
                     ))}
                   </ul>
 
-                  <Button
-                    variant={tier.highlighted ? "hero" : "hero-outline"}
-                    size="lg"
-                    className="w-full"
-                  >
-                    Request a Pipeline Audit
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <Link to="/contact">
+                    <Button
+                      variant={tier.highlighted ? "hero" : "hero-outline"}
+                      size="lg"
+                      className="w-full"
+                    >
+                      Request a Pipeline Audit
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </ScrollReveal>
             ))}
@@ -313,13 +316,15 @@ export default function EngagementModel() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.16}>
-            <Button
-              size="xl"
-              className="bg-background text-primary hover:bg-background/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-base font-semibold"
-            >
-              Request a Pipeline Audit
-              <ArrowRight className="w-5 h-5 ml-1" />
-            </Button>
+            <Link to="/contact">
+              <Button
+                size="xl"
+                className="bg-background text-primary hover:bg-background/90 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-base font-semibold"
+              >
+                Request a Pipeline Audit
+                <ArrowRight className="w-5 h-5 ml-1" />
+              </Button>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
