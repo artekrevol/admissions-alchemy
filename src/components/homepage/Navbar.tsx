@@ -16,6 +16,7 @@ const secondaryPages = [
   { label: "Why PatientFlow", href: "/why-patientflow" },
   { label: "Case Study", href: "/case-study" },
   { label: "Engagement Model", href: "/engagement-model" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export function Navbar() {

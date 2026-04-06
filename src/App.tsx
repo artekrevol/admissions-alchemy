@@ -13,6 +13,7 @@ import CaseStudy from "./pages/CaseStudy.tsx";
 import Sprint from "./pages/Sprint.tsx";
 import EngagementModel from "./pages/EngagementModel.tsx";
 import WhyPatientFlow from "./pages/WhyPatientFlow.tsx";
+import Blog from "./pages/Blog.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/sprint" element={<Sprint />} />
           <Route path="/engagement-model" element={<EngagementModel />} />
           <Route path="/why-patientflow" element={<WhyPatientFlow />} />
+          <Route path="/blog" element={<Blog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
